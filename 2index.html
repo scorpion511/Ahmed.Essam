@@ -16,59 +16,78 @@ html, body {
     font-family: sans-serif;
 }
 
-/* logo.png in top left */
 .logo {
     position: absolute;
     top: 15px;
     left: 15px;
-    width: 120px; /* Suitable size */
+    width: 120px;
     height: auto;
-    filter: drop-shadow(0 0 5px #fc0404);
+    filter: drop-shadow(0 0 5px #00f2ff);
 }
 
 .glow-title {
     font-size: 45px;
     color: #fff;
-    animation: glow 1.5s ease-in-out infinite alternate;
+    animation: titleGlow 1.5s ease-in-out infinite alternate;
     margin-top: 60px;
 }
 
-@keyframes glow {
+@keyframes titleGlow {
     from { text-shadow: 0 0 10px #fff, 0 0 20px #fc0404, 0 0 30px #fc0404; }
     to { text-shadow: 0 0 20px #fff, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d; }
 }
 
+/* FROST BLUE GLOWING & SHAKING BUTTON */
 .scorp-btn {
     display: inline-block;
     padding: 20px 40px;
-    background-color: #fc0404;
-    color: white;
+    background-color: rgba(0, 242, 255, 0.2);
+    color: #00f2ff;
     font-size: 24px;
     font-weight: bold;
     border-radius: 10px;
     text-decoration: none;
-    border: 2px solid white;
+    border: 2px solid #00f2ff;
     margin-top: 30px;
-    box-shadow: 0 0 15px #fc0404;
+    box-shadow: 0 0 20px #00f2ff, inset 0 0 10px #00f2ff;
+    text-shadow: 0 0 10px #00f2ff;
+    animation: shakeBtn 0.5s infinite; /* Subtle Shake */
 }
 
-/* Big Frost Glowing Rectangle */
+@keyframes shakeBtn {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.scorp-btn:hover {
+    background-color: #00f2ff;
+    color: black;
+    box-shadow: 0 0 40px #00f2ff;
+}
+
 .frost-box {
     display: inline-block;
-    background: rgba(0, 0, 0, 0.7); /* Black transparent */
+    background: rgba(0, 0, 0, 0.7);
     padding: 20px 40px;
     border-radius: 15px;
-    border: 2px solid #00f2ff; /* Frost Blue Glow */
+    border: 2px solid #00f2ff;
     box-shadow: 0 0 20px #00f2ff, inset 0 0 10px #00f2ff;
     margin-top: 40px;
 }
 
-/* Individual Colors for Dareen Omar jojo */
-.name-d { color: #ff00ff; text-shadow: 0 0 5px #ff00ff; } /* Pink */
-.name-o { color: #00ff00; text-shadow: 0 0 5px #00ff00; } /* Green */
-.name-j { color: #ffff00; text-shadow: 0 0 5px #ffff00; } /* Yellow */
+.name-d { color: #ff00ff; text-shadow: 0 0 5px #ff00ff; }
+.name-o { color: #00ff00; text-shadow: 0 0 5px #00ff00; }
+.name-j { color: #ffff00; text-shadow: 0 0 5px #ffff00; }
 
-/* Ahmed Essam Glowing Fire Badge */
 .fire-badge {
     display: inline-block;
     background: rgba(0, 0, 0, 0.8);
@@ -89,7 +108,7 @@ html, body {
 }
 
 #clock, #date { font-weight: bold; font-size: 22px; padding: 15px; color: white; }
-#date { float: left; margin-left: 140px; } /* Space for logo */
+#date { float: left; margin-left: 140px; }
 #clock { float: right; }
 </style>
 <script>
@@ -113,15 +132,12 @@ html, body {
         <a href="hen/900/index.html" class="scorp-btn">LOAD GOLDHEN 9.00 AUTO</a>
         <br>
         
-        <!-- Big Frost Box -->
         <div class="frost-box">
             <h2 style="margin: 0; font-size: 26px;">Special thanks to: 
                 <span class="name-d">Dareen</span> 
                 <span class="name-o">Omar</span> 
                 <span class="name-j">jojo</span>
             </h2>
-            
-            <!-- Fire Badge inside/under -->
             <br>
             <div class="fire-badge">Hacked By Ahmed Essam</div>
         </div>
