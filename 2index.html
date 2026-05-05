@@ -2,46 +2,61 @@
 <html manifest="cache.manifest">
 <head>
 <meta charset="utf-8">
-<title>SCORPION HACK - MAIN MENU</title>
+<title>WELCOME TO SCORPION HACK</title>
 <style>
 html, body {
-background-image: url('ros.gif');
-background-size: 100%;
-background-repeat: no-repeat;
-background-color: #24272b;
-color: white;
-text-align: center;
-margin: 0px;
-overflow: hidden;
+    background-image: url('img.jpg'); /* Ensure img.jpg is in your root folder */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #24272b;
+    color: white;
+    text-align: center;
+    margin: 0px;
+    overflow: hidden;
+    font-family: sans-serif;
 }
 
-h1 {
-    text-shadow: 0.1em 0.1em 0.2em black;
-    font-size: 30px;
-    color: #fc0404;
+/* Glowing Welcome Title */
+.glow-title {
+    font-size: 45px;
+    color: #fff;
+    text-align: center;
+    animation: glow 1.5s ease-in-out infinite alternate;
+    margin-top: 80px;
 }
 
-.btn-container {
-    margin-top: 50px;
+@keyframes glow {
+    from { text-shadow: 0 0 10px #fff, 0 0 20px #fc0404, 0 0 30px #fc0404; }
+    to { text-shadow: 0 0 20px #fff, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d; }
 }
 
+/* Main Button */
 .scorp-btn {
     display: inline-block;
     padding: 20px 40px;
     background-color: #fc0404;
     color: white;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
     border-radius: 10px;
     text-decoration: none;
     border: 2px solid white;
-    transition: 0.3s;
+    margin-top: 40px;
+    box-shadow: 0 0 15px #fc0404;
 }
 
-.scorp-btn:hover {
-    background-color: white;
-    color: #fc0404;
-    transform: scale(1.1);
+/* Shrinked Glowing Rectangles for Names */
+.name-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    margin: 0 10px;
+    border: 2px solid #fc0404;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px #fc0404, inset 0 0 5px #fc0404;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
 }
 
 #clock, #date {
@@ -49,30 +64,24 @@ h1 {
     font-size: 24px;
     padding: 15px;
     color: white;
+    text-shadow: 2px 2px 4px black;
 }
-
 #date { float: left; }
 #clock { float: right; }
 
 .credits {
     position: absolute;
-    bottom: 20px;
+    bottom: 30px;
     width: 100%;
-    font-size: 18px;
 }
 </style>
 <script>
     function showdate() {
         var dt = new Date();
-        var Hour = dt.getHours();
-        var Minute = dt.getMinutes();
-        var Day = dt.getDate();
-        var Month = dt.getMonth() + 1;
-        var Year = dt.getFullYear();
-        if (Minute < 10) { Minute = "0" + Minute; }
-        if (Hour < 10) { Hour = "0" + Hour; }
-        document.getElementById("date").innerHTML = Day + "/" + Month + "/" + Year;
-        document.getElementById("clock").innerHTML = Hour + ":" + Minute;
+        var H = dt.getHours(); var M = dt.getMinutes();
+        if (M < 10) M = "0" + M; if (H < 10) H = "0" + H;
+        document.getElementById("date").innerHTML = dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
+        document.getElementById("clock").innerHTML = H + ":" + M;
     }
     setInterval(showdate, 1000);
 </script>
@@ -81,16 +90,16 @@ h1 {
     <span id="date"></span>
     <span id="clock"></span>
     
-    <div style="margin-top: 100px;">
-        <h1>SCORPION HACK</h1>
-        <div class="btn-container">
-            <!-- THIS IS THE MAIN REDIRECT TO YOUR SUBFOLDER -->
-            <a href="hen/900/index.html" class="scorp-btn">LOAD GOLDHEN 9.00 AUTO</a>
-        </div>
+    <div style="margin-top: 50px;">
+        <h1 class="glow-title">Welcome to SCORPION HACK</h1>
+        
+        <a href="hen/900/index.html" class="scorp-btn">LOAD GOLDHEN 9.00 AUTO</a>
     </div>
 
     <div class="credits">
-        <h2 style="color: #fc0404;">Special Thanks: <span style="color: white;">Dareen Omar jojo & Ahmed ESSAM</span></h2>
+        <h2 style="color: #fc0404; margin-bottom: 15px;">Special Thanks to:</h2>
+        <div class="name-badge">Dareen Omar jojo</div>
+        <div class="name-badge">Ahmed ESSAM</div>
     </div>
 </body>
 </html>
