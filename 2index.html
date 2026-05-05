@@ -5,7 +5,7 @@
 <title>WELCOME TO SCORPION HACK</title>
 <style>
 html, body {
-    background-image: url('img.jpg'); /* Ensure img.jpg is in your root folder */
+    background-image: url('img.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #24272b;
@@ -16,13 +16,21 @@ html, body {
     font-family: sans-serif;
 }
 
-/* Glowing Welcome Title */
+/* logo.png in top left */
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 120px; /* Suitable size */
+    height: auto;
+    filter: drop-shadow(0 0 5px #fc0404);
+}
+
 .glow-title {
     font-size: 45px;
     color: #fff;
-    text-align: center;
     animation: glow 1.5s ease-in-out infinite alternate;
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
 @keyframes glow {
@@ -30,7 +38,6 @@ html, body {
     to { text-shadow: 0 0 20px #fff, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d; }
 }
 
-/* Main Button */
 .scorp-btn {
     display: inline-block;
     padding: 20px 40px;
@@ -41,39 +48,49 @@ html, body {
     border-radius: 10px;
     text-decoration: none;
     border: 2px solid white;
-    margin-top: 40px;
+    margin-top: 30px;
     box-shadow: 0 0 15px #fc0404;
 }
 
-/* Shrinked Glowing Rectangles for Names */
-.name-badge {
+/* Big Frost Glowing Rectangle */
+.frost-box {
     display: inline-block;
-    padding: 5px 15px;
-    margin: 0 10px;
-    border: 2px solid #fc0404;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 10px #fc0404, inset 0 0 5px #fc0404;
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
+    background: rgba(0, 0, 0, 0.7); /* Black transparent */
+    padding: 20px 40px;
+    border-radius: 15px;
+    border: 2px solid #00f2ff; /* Frost Blue Glow */
+    box-shadow: 0 0 20px #00f2ff, inset 0 0 10px #00f2ff;
+    margin-top: 40px;
 }
 
-#clock, #date {
+/* Individual Colors for Dareen Omar jojo */
+.name-d { color: #ff00ff; text-shadow: 0 0 5px #ff00ff; } /* Pink */
+.name-o { color: #00ff00; text-shadow: 0 0 5px #00ff00; } /* Green */
+.name-j { color: #ffff00; text-shadow: 0 0 5px #ffff00; } /* Yellow */
+
+/* Ahmed Essam Glowing Fire Badge */
+.fire-badge {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: 2px solid #ff4500;
+    box-shadow: 0 0 15px #ff4500, inset 0 0 5px #ff8c00;
+    margin-top: 15px;
+    font-size: 20px;
     font-weight: bold;
-    font-size: 24px;
-    padding: 15px;
-    color: white;
-    text-shadow: 2px 2px 4px black;
+    color: #ff4500;
+    animation: fireGlow 0.8s infinite alternate;
 }
-#date { float: left; }
+
+@keyframes fireGlow {
+    from { text-shadow: 0 0 10px #ff4500; border-color: #ff4500; }
+    to { text-shadow: 0 0 20px #ff0000; border-color: #ff0000; }
+}
+
+#clock, #date { font-weight: bold; font-size: 22px; padding: 15px; color: white; }
+#date { float: left; margin-left: 140px; } /* Space for logo */
 #clock { float: right; }
-
-.credits {
-    position: absolute;
-    bottom: 30px;
-    width: 100%;
-}
 </style>
 <script>
     function showdate() {
@@ -87,19 +104,27 @@ html, body {
 </script>
 </head>
 <body onload="showdate()">
+    <img src="logo.png" class="logo">
     <span id="date"></span>
     <span id="clock"></span>
     
-    <div style="margin-top: 50px;">
+    <div style="margin-top: 20px;">
         <h1 class="glow-title">Welcome to SCORPION HACK</h1>
-        
         <a href="hen/900/index.html" class="scorp-btn">LOAD GOLDHEN 9.00 AUTO</a>
-    </div>
-
-    <div class="credits">
-        <h2 style="color: #fc0404; margin-bottom: 15px;">Special Thanks to:</h2>
-        <div class="name-badge">Dareen Omar jojo</div>
-        <div class="name-badge">Ahmed ESSAM</div>
+        <br>
+        
+        <!-- Big Frost Box -->
+        <div class="frost-box">
+            <h2 style="margin: 0; font-size: 26px;">Special thanks to: 
+                <span class="name-d">Dareen</span> 
+                <span class="name-o">Omar</span> 
+                <span class="name-j">jojo</span>
+            </h2>
+            
+            <!-- Fire Badge inside/under -->
+            <br>
+            <div class="fire-badge">Hacked By Ahmed Essam</div>
+        </div>
     </div>
 </body>
 </html>
