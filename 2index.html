@@ -14,8 +14,10 @@ html, body {
     margin: 0px;
     overflow: hidden;
     font-family: sans-serif;
+    height: 100vh; /* Ensure full viewport height */
 }
 
+/* logo.png in top left */
 .logo {
     position: absolute;
     top: 15px;
@@ -37,7 +39,7 @@ html, body {
     to { text-shadow: 0 0 20px #fff, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d; }
 }
 
-/* FROST BLUE GLOWING & SHAKING BUTTON */
+/* SLOW FADING FROST BLUE BUTTON */
 .scorp-btn {
     display: inline-block;
     padding: 20px 40px;
@@ -51,55 +53,51 @@ html, body {
     margin-top: 30px;
     box-shadow: 0 0 20px #00f2ff, inset 0 0 10px #00f2ff;
     text-shadow: 0 0 10px #00f2ff;
-    animation: shakeBtn 0.5s infinite; /* Subtle Shake */
+    animation: fadeGlow 2.5s ease-in-out infinite alternate; /* Slow Fading */
 }
 
-@keyframes shakeBtn {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
+@keyframes fadeGlow {
+    from { opacity: 0.6; box-shadow: 0 0 10px #00f2ff; }
+    to { opacity: 1; box-shadow: 0 0 30px #00f2ff, inset 0 0 15px #00f2ff; }
 }
 
 .scorp-btn:hover {
     background-color: #00f2ff;
     color: black;
-    box-shadow: 0 0 40px #00f2ff;
+    opacity: 1;
 }
 
+/* BIG FROST GLOWING RECTANGLE - POSITIONED AT BOTTOM MIDDLE */
 .frost-box {
-    display: inline-block;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px 40px;
+    position: absolute;
+    bottom: 30px; /* Position at bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    background: rgba(0, 0, 0, 0.75);
+    padding: 15px 40px;
     border-radius: 15px;
     border: 2px solid #00f2ff;
     box-shadow: 0 0 20px #00f2ff, inset 0 0 10px #00f2ff;
-    margin-top: 40px;
+    min-width: 450px;
 }
 
 .name-d { color: #ff00ff; text-shadow: 0 0 5px #ff00ff; }
 .name-o { color: #00ff00; text-shadow: 0 0 5px #00ff00; }
 .name-j { color: #ffff00; text-shadow: 0 0 5px #ffff00; }
 
+/* Hacked By Ahmed Essam - Glowing Fire Badge */
 .fire-badge {
     display: inline-block;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 8px 20px;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 5px 20px;
     border-radius: 5px;
     border: 2px solid #ff4500;
     box-shadow: 0 0 15px #ff4500, inset 0 0 5px #ff8c00;
-    margin-top: 15px;
-    font-size: 20px;
+    margin-top: 10px;
+    font-size: 18px;
     font-weight: bold;
     color: #ff4500;
-    animation: fireGlow 0.8s infinite alternate;
+    animation: fireGlow 1s infinite alternate;
 }
 
 @keyframes fireGlow {
@@ -130,17 +128,16 @@ html, body {
     <div style="margin-top: 20px;">
         <h1 class="glow-title">Welcome to SCORPION HACK</h1>
         <a href="hen/900/index.html" class="scorp-btn">LOAD GOLDHEN 9.00 AUTO</a>
-        <br>
-        
-        <div class="frost-box">
-            <h2 style="margin: 0; font-size: 26px;">Special thanks to: 
-                <span class="name-d">Dareen</span> 
-                <span class="name-o">Omar</span> 
-                <span class="name-j">jojo</span>
-            </h2>
-            <br>
-            <div class="fire-badge">Hacked By Ahmed Essam</div>
-        </div>
+    </div>
+
+    <!-- Big Frost Box Moved to Bottom Mid -->
+    <div class="frost-box">
+        <h2 style="margin: 0; font-size: 24px;">Special thanks to: 
+            <span class="name-d">Dareen</span> 
+            <span class="name-o">Omar</span> 
+            <span class="name-j">jojo</span>
+        </h2>
+        <div class="fire-badge">Hacked By Ahmed Essam</div>
     </div>
 </body>
 </html>
