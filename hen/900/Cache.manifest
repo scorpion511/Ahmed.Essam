@@ -1,15 +1,18 @@
 CACHE MANIFEST 
-# Scorpion Hack v6.3 (Dareen Omar jojo & Ahmed ESSAM)
+# Scorpion Hack v9.1 - Final Path Alignment
+# (Dareen Omar jojo & Ahmed ESSAM)
 
 CACHE:
-# Root files (Two folders up)
-../../index.html
+# 1. Main Root Files (Two levels up)
 ../../1index.html
 ../../2index.html
 ../../img.jpg
 ../../logo.png
 
-# Subfolder files
+# 2. The Index inside the /hen/ folder (One level up)
+../index.html
+
+# 3. Subfolder Files (Inside /hen/900/ with this manifest)
 img.jpg
 index.html
 alert.mjs
