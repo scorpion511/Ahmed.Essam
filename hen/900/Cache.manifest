@@ -1,33 +1,36 @@
 CACHE MANIFEST 
-# Scorpion Hack v10.0 - Final Red X Fix
+# Scorpion Hack v15.0 - Ultimate Edition
+# Designed By Ahmed ESSAM for Dareen Omar jojo
 
-CACHE:
-# 1. Main Root Files (Using Full URLs to fix Red X)
-https://github.io
-https://github.io
-https://github.io
-https://github.io
-https://github.io
-
-# 2. The Index inside the /hen/ folder (Keep this, it's already OK)
-../index.html
-
-# 3. Subfolder Files (Keep these, they are already OK)
-img.jpg
-index.html
-alert.mjs
-payload.js
-goldhen.bin
+# Subfolder Files (Inside hen/900)
+about.html
 aio_patches.bin
+alert.mjs
 cache.html
 config.mjs
+COPYING
+goldhen.bin
+img.jpg
+index.html
 lapse.mjs
+LICENSE
 psfree.mjs
 psfree_lapse.cache
+README.md
 send.mjs
+AIO_Fix_Temp/patch_aio.c
+AIO_Fix_Temp/vfs_aio2_pdtor.c
 fonts/FONTS.LICENSE
 fonts/LiberationMono-Regular.ttf
 fonts/README.txt
+kpatch/900.c
+kpatch/900.d
+kpatch/900.elf
+kpatch/900.o
+kpatch/Makefile
+kpatch/script.ld
+kpatch/types.h
+kpatch/utils.h
 module/chain.mjs
 module/constants.mjs
 module/int64.mjs
@@ -38,6 +41,13 @@ module/rw.mjs
 module/utils.mjs
 module/view.mjs
 rop/900.mjs
+
+# Menu Files (Climbing up to Root)
+../../index.html
+../../1index.html
+../../2index.html
+../../logo.png
+../../img.jpg
 
 NETWORK:
 *
