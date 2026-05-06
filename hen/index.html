@@ -30,7 +30,6 @@ h1 {
     to { text-shadow: 0 0 20px #ff4d4d; }
 }
 
-/* --- THE MISSING CSS FOR FIRE RECTANGLES --- */
 .fire-link {
     text-decoration: none;
     display: inline-block;
@@ -62,53 +61,52 @@ a:hover {
 </style>
 </head>
 
-<body> <!-- Added missing body tag -->
+<body> 
 <br><br><br><br>
 
 <div id="container" style="text-align:center;">
     
-    <!-- ROW 1: MAIN FIRMWARE EXPLOITS -->
-    <a href="hen/505/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Hack - FW 5.05 GoldHEN'" onMouseOut="msgs.innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
+    <!-- ROW 1: MAIN FIRMWARE EXPLOITS (Removed 'hen/' from paths) -->
+    <a href="505/index.html" class="fire-link" onMouseOver="document.getElementById('msgs').innerHTML='Scorpion Hack - FW 5.05 GoldHEN'" onMouseOut="document.getElementById('msgs').innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
         <div class="fire-rect">5.05 FW GoldHEN</div>
     </a>
 
-    <a href="hen/672/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Hack - FW 6.72 GoldHEN'" onMouseOut="msgs.innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
+    <a href="672/index.html" class="fire-link" onMouseOver="document.getElementById('msgs').innerHTML='Scorpion Hack - FW 6.72 GoldHEN'" onMouseOut="document.getElementById('msgs').innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
         <div class="fire-rect">6.72 FW GoldHEN</div>
     </a>
 
-    <a href="hen/702/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Hack - FW 7.02 GoldHEN'" onMouseOut="msgs.innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
+    <a href="702/index.html" class="fire-link" onMouseOver="document.getElementById('msgs').innerHTML='Scorpion Hack - FW 7.02 GoldHEN'" onMouseOut="document.getElementById('msgs').innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
         <div class="fire-rect">7.02 FW GoldHEN</div>
     </a>
 
-    <a href="hen/755/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Hack - FW 7.55 GoldHEN'" onMouseOut="msgs.innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
+    <a href="755/index.html" class="fire-link" onMouseOver="document.getElementById('msgs').innerHTML='Scorpion Hack - FW 7.55 GoldHEN'" onMouseOut="document.getElementById('msgs').innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
         <div class="fire-rect">7.55 FW GoldHEN</div>
     </a>
 
     <br><br>
 
     <!-- ROW 2: 9.00 AND UTILITIES -->
-    <a href="hen/900/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Hack - FW 9.00 GoldHEN (AUTO)'" onMouseOut="msgs.innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
+    <a href="900/index.html" class="fire-link" onMouseOver="document.getElementById('msgs').innerHTML='Scorpion Hack - FW 9.00 GoldHEN (AUTO)'" onMouseOut="document.getElementById('msgs').innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
         <div class="fire-rect" style="border-color: #00f2ff; color: #00f2ff; box-shadow: 0 0 15px #00f2ff;">9.00 FW GoldHEN</div>
     </a>
 
-    <a href="hen/restore/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Restore - Save Page to User Guide'" onMouseOut="msgs.innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
+    <a href="restore/index.html" class="fire-link" onMouseOver="document.getElementById('msgs').innerHTML='Scorpion Restore - Save Page to User Guide'" onMouseOut="document.getElementById('msgs').innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
         <div class="fire-rect">RESTORE GUIDE</div>
     </a>
 
     <br><br>
 
-    <!-- ROW 3: TRAINERS & TOOLS -->
-    <a href="trainer/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Game Trainers - Cheats Menu'" onMouseOut="msgs.innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
+    <!-- ROW 3: TRAINERS & TOOLS (Going up one level to find these) -->
+    <a href="../trainer/index.html" class="fire-link" onMouseOver="document.getElementById('msgs').innerHTML='Scorpion Game Trainers - Cheats Menu'" onMouseOut="document.getElementById('msgs').innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
         <div class="fire-rect">GAME TRAINERS</div>
     </a>
 
-    <a href="tools/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Tools - PS4 Utilities Collection'" onMouseOut="msgs.innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
+    <a href="../tools/index.html" class="fire-link" onMouseOver="document.getElementById('msgs').innerHTML='Scorpion Tools - PS4 Utilities Collection'" onMouseOut="document.getElementById('msgs').innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
         <div class="fire-rect">PS4 TOOLS</div>
     </a>
 
 </div>
 
-<!-- FINAL FOOTER SECTION -->
 <h1 id="msgs" style="font-size:35px; text-align:center; color:#00f2ff; text-shadow: 0 0 10px #00f2ff; margin-top: 40px;">
     WELCOME TO SCORPION HACK ALL IN 1
 </h1>
