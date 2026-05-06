@@ -1,143 +1,234 @@
-<!DOCTYPE html>
-<html manifest="cache.manifest">
-<head>
-<meta charset="utf-8">
-<title>WELCOME TO SCORPION HACK</title>
+</html>
 <style>
+html {
+min-height: 100%;
+}
+body {
+background-color:#1D2025;
+margin:0px;
+a{color:white;}
+}
 html, body {
-    background-image: url('img.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #24272b;
-    color: white;
-    text-align: center;
-    margin: 0px;
-    overflow: hidden;
-    font-family: sans-serif;
-    height: 100vh; /* Ensure full viewport height */
+background-image: url('img.jpg');
+background-size: 100%;
+background-repeat: no-repeat;
+background-color: #24272b;
+color: white;
+text-align: center;
+margin: 0px;
+overflow: hidden;
+}
+h1 {
+text-shadow: 0.1em 0.1em 0.2em black;
+font-size: 25px;
+text-align: center;
+color: white;
 }
 
-/* logo.png in top left */
-.logo {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    width: 120px;
-    height: auto;
-    filter: drop-shadow(0 0 5px #00f2ff);
-}
-
-.glow-title {
-    font-size: 45px;
+.TextCaption{
+display: block;
+    font-size: 20px;
     color: #fff;
-    animation: titleGlow 1.5s ease-in-out infinite alternate;
-    margin-top: 60px;
-}
-
-@keyframes titleGlow {
-    from { text-shadow: 0 0 10px #fff, 0 0 20px #fc0404, 0 0 30px #fc0404; }
-    to { text-shadow: 0 0 20px #fff, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d; }
-}
-
-/* SLOW FADING FROST BLUE BUTTON */
-.scorp-btn {
-    display: inline-block;
-    padding: 20px 40px;
-    background-color: rgba(0, 242, 255, 0.2);
-    color: #00f2ff;
-    font-size: 24px;
-    font-weight: bold;
-    border-radius: 10px;
     text-decoration: none;
-    border: 2px solid #00f2ff;
-    margin-top: 30px;
-    box-shadow: 0 0 20px #00f2ff, inset 0 0 10px #00f2ff;
-    text-shadow: 0 0 10px #00f2ff;
-    animation: fadeGlow 2.5s ease-in-out infinite alternate; /* Slow Fading */
 }
 
-@keyframes fadeGlow {
-    from { opacity: 0.6; box-shadow: 0 0 10px #00f2ff; }
-    to { opacity: 1; box-shadow: 0 0 30px #00f2ff, inset 0 0 15px #00f2ff; }
+a img {
+    display: inline-block;  text-decoration: none;
+}
+a {
+    display: inline-block;  text-decoration: none;
 }
 
-.scorp-btn:hover {
-    background-color: #00f2ff;
-    color: black;
-    opacity: 1;
+a:hover {
+  animation: shake 0.5s infinite;
 }
-
-/* BIG FROST GLOWING RECTANGLE - POSITIONED AT BOTTOM MIDDLE */
-.frost-box {
-    position: absolute;
-    bottom: 30px; /* Position at bottom */
-    left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
-    background: rgba(0, 0, 0, 0.75);
-    padding: 15px 40px;
-    border-radius: 15px;
-    border: 2px solid #00f2ff;
-    box-shadow: 0 0 20px #00f2ff, inset 0 0 10px #00f2ff;
-    min-width: 450px;
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
 }
-
-.name-d { color: #ff00ff; text-shadow: 0 0 5px #ff00ff; }
-.name-o { color: #00ff00; text-shadow: 0 0 5px #00ff00; }
-.name-j { color: #ffff00; text-shadow: 0 0 5px #ffff00; }
-
-/* Hacked By Ahmed Essam - Glowing Fire Badge */
-.fire-badge {
-    display: inline-block;
-    background: rgba(0, 0, 0, 0.85);
-    padding: 5px 20px;
-    border-radius: 5px;
-    border: 2px solid #ff4500;
-    box-shadow: 0 0 15px #ff4500, inset 0 0 5px #ff8c00;
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #ff4500;
-    animation: fireGlow 1s infinite alternate;
+#clock{
+ float:right;
+ margin-right:2.25%;
+ margin-top: 0px;
+ font-weight:bold;
+ font-size:28px;
+  color: white;
 }
-
-@keyframes fireGlow {
-    from { text-shadow: 0 0 10px #ff4500; border-color: #ff4500; }
-    to { text-shadow: 0 0 20px #ff0000; border-color: #ff0000; }
+#date {
+ float:left;
+ margin-left:1.25%;
+ font-weight:bold;
+ margin-top: 0px;
+ font-size:28px;
+ color: white;
 }
-
-#clock, #date { font-weight: bold; font-size: 22px; padding: 15px; color: white; }
-#date { float: left; margin-left: 140px; }
-#clock { float: right; }
-</style>
-<script>
+</style><script>
     function showdate() {
-        var dt = new Date();
-        var H = dt.getHours(); var M = dt.getMinutes();
-        if (M < 10) M = "0" + M; if (H < 10) H = "0" + H;
-        document.getElementById("date").innerHTML = dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
-        document.getElementById("clock").innerHTML = H + ":" + M;
-    }
-    setInterval(showdate, 1000);
+  var dt = new Date();
+    Hour= dt.getHours();
+  Minute= dt.getMinutes();
+     Day=dt.getDate();
+   Month=dt.getMonth()+1;
+   Year=dt.getFullYear();
+if (Minute < 10) { Minute = "0" + Minute; };
+if (Hour < 10) { Hour = "0" + Hour; };
+document.getElementById("date").innerHTML = (Day+"/"+Month+"/"+Year);
+document.getElementById("clock").innerHTML = (Hour+":"+Minute);
+  }
+  
+  setInterval(showdate,0);
 </script>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Ahmed ESSAM">
+    <meta name="description" content="Scorpion Hack designed by Ahmed ESSAM for Dareen Omar jojo">
+    <title>WELCOME TO SCORPION HACK</title>
 </head>
-<body onload="showdate()">
+<body onload="showdate()" class="bg-darker">
+    <!-- 1. Your Logo (Top Left) -->
     <img src="logo.png" class="logo">
+
+    <!-- 2. Your Name (Directly under Logo) -->
+    <div style="position: absolute; top: 130px; left: 15px; font-weight: bold; text-align: left;">
+        <span style="color: #00f2ff; text-shadow: 0 0 10px #00f2ff; font-size: 20px;">
+            Designed By Ahmed ESSAM
+        </span>
+    </div>
+
+    <!-- 3. Clock and Date (Top Right) -->
     <span id="date"></span>
     <span id="clock"></span>
-    
-    <div style="margin-top: 20px;">
-        <h1 class="glow-title">Welcome to SCORPION HACK</h1>
-        <a href="hen/900/index.html" class="scorp-btn">LOAD GOLDHEN 9.00 AUTO</a>
-    </div>
 
-    <!-- Big Frost Box Moved to Bottom Mid -->
-    <div class="frost-box">
-        <h2 style="margin: 0; font-size: 24px;">Special thanks to: 
-            <span class="name-d">Dareen</span> 
-            <span class="name-o">Omar</span> 
-            <span class="name-j">jojo</span>
-        </h2>
-        <div class="fire-badge">Hacked By Ahmed Essam</div>
-    </div>
-</body>
-</html>
+    <!-- 4. Main Container (Exploit Buttons Go Here) -->
+    <div id="all" style="text-align:center; margin-top: 50px;">
+        <h1 class="glow-title">Welcome to SCORPION HACK</h1>
+
+<!-- Main Firmware Selection -->
+<div id="main-menu" style="text-align:center;">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="allhost505()" onMouseOver="msgs.innerHTML='Scorpion Hack - FW 5.05 Selection'"><img src="pic/505.png"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="allhost672()" onMouseOver="msgs.innerHTML='Scorpion Hack - FW 6.72 Selection'"><img src="pic/672.png"></a>
+    
+    <!-- This is the 9.00 button - Modified to show Scorpion Hack -->
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="allhost900c()" onMouseOver="msgs.innerHTML='Scorpion Hack - FW 9.00 GoldHEN'"><img src="pic/900.png"></a>
+    
+    <br><br>
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="allgoldhen()" onMouseOver="msgs.innerHTML='Scorpion All-in-One GoldHEN (5.05 / 6.72 / 9.00)'"><img src="pic/goldhen.png"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="alltrainer()" onMouseOver="msgs.innerHTML='Scorpion Trainer - PS4 Game Cheats'"><img src="pic/trainer.png"></a>
+</div>
+
+<!-- Firmware 5.05 Sub-Menu -->
+<div id="host505" style="text-align:center;display:none">
+<!-- Scorpion 5.05 Section -->
+<div id="host505" style="text-align:center;display:none">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="505/index.html" onMouseOver="msgs.innerHTML='Scorpion Hack - FW 5.05 Offline'"><img src="pic/505.png"></a>
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="restore/505/index.html" onMouseOver="msgs.innerHTML='Scorpion Restore - Save 5.05 to User Guide'"><img src="pic/restore505.png"></a>
+</div>
+
+<!-- Scorpion 6.72 Section -->
+<div id="host672" style="text-align:center;display:none">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="672/index.html" onMouseOver="msgs.innerHTML='Scorpion Hack - FW 6.72 Offline'"><img src="pic/672.png"></a>
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="restore/672/index.html" onMouseOver="msgs.innerHTML='Scorpion Restore - Save 6.72 to User Guide'"><img src="pic/restore672.png"></a>
+</div>
+
+<!-- Starting the 9.00 Section -->
+<div id="host900c" style="text-align:center;display:none">
+
+<!-- Scorpion 9.00 Section -->
+<div id="host900c" style="text-align:center;display:none">
+    <!-- Main Scorpion 9.00 Auto Exploit -->
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="hen/900/index.html" onMouseOver="msgs.innerHTML='Scorpion Hack 9.00/N - Auto Exploit by Ahmed ESSAM (Dareen Omar jojo)' "><img src="pic/firmware900n.png"></a>
+    
+    <!-- Scorpion 9.00 Manual -->
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="900c/index.html" onMouseOver="msgs.innerHTML='Scorpion Hack 9.00/C - Manual Exploit Full Cache (Ahmed ESSAM)' "><img src="pic/firmware900c.png"></a>
+    
+    <!-- Scorpion 9.00 Arabic Version -->
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="900a/index.html" onMouseOver="msgs.innerHTML='سكوربيون هاك إصدار 9.00 كامل باللغة العربية'"><img src="pic/900a.png"></a>
+    
+    <br><br>
+    
+    <!-- Restore / User Guide Section -->
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="restore/900/index.html" onMouseOver="msgs.innerHTML='Scorpion Restore - Save 9.00/N to User Guide' "><img src="pic/restore900n.png"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="restore/900/indexc.html" onMouseOver="msgs.innerHTML='Scorpion Restore - Save 9.00/C to User Guide' "><img src="pic/restore900c.png"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="restore/900/indexa.html" onMouseOver="msgs.innerHTML='سكوربيون ريستور - حفظ الصفحة في دليل المستخدمين 900' "><img src="pic/restore900a.png"></a>
+</div>
+
+<!-- Starting Trainer Section -->
+<div id="trainer" style="text-align:center;display:none">
+
+<!-- Scorpion Trainer Section -->
+<div id="trainer" style="text-align:center;display:none">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="trainer/index505.html" onMouseOver="msgs.innerHTML='Scorpion Trainer - FW 5.05 Game Cheats' "><img src="pic/trainer505.png"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="trainer/index672.html" onMouseOver="msgs.innerHTML='Scorpion Trainer - FW 6.72 Game Cheats' "><img src="pic/trainer672.png"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="trainer/index900.html" onMouseOver="msgs.innerHTML='Scorpion Trainer - FW 9.00 Game Cheats' "><img src="pic/trainer900.png"></a>
+<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="trainer/restore/505/index.html" onMouseOver="msgs.innerHTML='Scorpion Restore - Save 5.05 Trainer to User Guide' "><img src="pic/restore505.png"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="trainer/restore/672/index.html" onMouseOver="msgs.innerHTML='Scorpion Restore - Save 6.72 Trainer to User Guide' "><img src="pic/restore672.png"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="trainer/restore/900/index.html" onMouseOver="msgs.innerHTML='Scorpion Restore - Save 9.00 Trainer to User Guide' "><img src="pic/restore900.png"></a>
+</div>
+
+<!-- Starting GoldHEN Selection Section -->
+<div id="goldhen" style="text-align:center;display:none">
+
+<!-- Scorpion GoldHEN Selection -->
+<div id="goldhen" style="text-align:center;display:none">
+    <a href="hen/505/index.html" onMouseOver="msgs.innerHTML='Scorpion GoldHEN - FW 5.05' "><img src="pic/goldhen505.png"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="hen/672/index.html" onMouseOver="msgs.innerHTML='Scorpion GoldHEN - FW 6.72' "><img src="pic/goldhen672.png"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    <!-- This button now points to your custom Scorpion subfolder -->
+    <a href="hen/900/index.html" onMouseOver="msgs.innerHTML='Scorpion GoldHEN - FW 9.00 (Ahmed ESSAM)' "><img src="pic/goldhen900.png"></a>
+    
+    <br><br>
+    
+    <a href="hen/restore/505/index.html" onMouseOver="msgs.innerHTML='Scorpion Restore - Save GoldHEN 5.05 to User Guide' "><img src="pic/restore505.png"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="hen/restore/672/index.html" onMouseOver="msgs.innerHTML='Scorpion Restore - Save GoldHEN 6.72 to User Guide' "><img src="pic/restore672.png"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="hen/restore/900/index.html" onMouseOver="msgs.innerHTML='Scorpion Restore - Save GoldHEN 9.00 to User Guide' "><img src="pic/restore900.png"></a>
+</div>
+
+<!-- Main Message Display -->
+<h1 id="msgs" style="font-size:35px; text-align:center; color:#00f2ff; text-shadow: 0 0 10px #00f2ff;"></h1>
+
+<script>
+    // Set the default message when the page loads
+    document.getElementById('msgs').innerHTML = 'WELCOME TO SCORPION HACK';
+</script>
+function allhost505(){
+all.style.display = "none";
+host505.style.display = "block";
+		}
+function allhost672(){
+all.style.display = "none";
+host672.style.display = "block";
+		}
+function allhost900c(){
+all.style.display = "none";
+host900c.style.display = "block";
+		}
+function allgoldhen(){
+all.style.display = "none";
+goldhen.style.display = "block";
+		}		
+function alltrainer(){
+all.style.display = "none";
+trainer.style.display = "block";
+		}				
+function backall(){
+all.style.display = "block";
+host505.style.display = "none";
+host672.style.display = "none";
+host900c.style.display = "none";
+trainer.style.display = "none";
+goldhen.style.display = "none";
+		}
+</script>
+</body></html>
