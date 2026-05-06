@@ -1,17 +1,123 @@
-<!DOCTYPE html>
-<html manifest="hen/900/cache.manifest">
+﻿<!DOCTYPE html>
+<html manifest="cache.manifest">
 <head>
-    <title>SCORPION HACK - LOADING</title>
-    <style>
-        body { background-color: #24272b; color: white; text-align: center; margin-top: 15%; }
-        h1 { color: #fc0404; text-shadow: 2px 2px black; }
-    </style>
+<style>
+html, body {
+    /* Updated to match your new theme */
+    background-image: url('img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #24272b;
+    color: white;
+    text-align: center;
+    margin: 0px;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+h1 {
+    text-shadow: 0.1em 0.1em 0.2em black;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+}
+
+/* Updated Clock and Date with Frost Blue Glow */
+#clock {
+    float: right;
+    margin-right: 2.25%;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 28px;
+    color: #00f2ff;
+    text-shadow: 0 0 10px #00f2ff;
+}
+
+#date {
+    float: left;
+    margin-left: 140px; /* Space for your logo */
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 28px;
+    color: #00f2ff;
+    text-shadow: 0 0 10px #00f2ff;
+}
+
+/* Shake animation kept for consistency */
+a:hover {
+    animation: shake 0.5s infinite;
+}
+@keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+</style>
+
+<script>
+    function showdate() {
+        var dt = new Date();
+        var Hour = dt.getHours();
+        var Minute = dt.getMinutes();
+        var Day = dt.getDate();
+        var Month = dt.getMonth() + 1;
+        var Year = dt.getFullYear();
+        if (Minute < 10) { Minute = "0" + Minute; };
+        if (Hour < 10) { Hour = "0" + Hour; };
+        document.getElementById("date").innerHTML = (Day + "/" + Month + "/" + Year);
+        document.getElementById("clock").innerHTML = (Hour + ":" + Minute);
+    }
+    setInterval(showdate, 1000); // Fixed from 0 to 1000 for better performance
+</script>
+
+<head>
+    <!-- Metadata & Credits -->
+    <meta charset="utf-8">
+    <meta name="author" content="Ahmed ESSAM">
+    <meta name="description" content="Scorpion Hack designed by Ahmed ESSAM for Dareen Omar jojo">
+    <title>WELCOME TO SCORPION HACK</title>
 </head>
-<body>
-    <h1>SCORPION HACK</h1>
-    <p>Initializing Exploit Components...</p>
-    <script>
-        setTimeout(function(){ window.location.href = "2index.html"; }, 1500);
-    </script>
+
+<body onload="showdate()" class="bg-darker">
+    <!-- 1. Clock and Date (Top Layer) -->
+    <span id="date"></span>
+    <span id="clock"></span>
+
+    <!-- 2. Your Logo (Top Left) -->
+    <img src="logo.png" class="logo">
+
+    <!-- 3. Your Name (Directly under Logo) -->
+    <div style="position: absolute; top: 130px; left: 15px; font-weight: bold; text-align: left;">
+        <span style="color: #00f2ff; text-shadow: 0 0 10px #00f2ff; font-size: 20px;">
+            Designed By Ahmed ESSAM
+        </span>
+    </div>
+
+    <!-- 4. Main Menu Container -->
+    <div id="container" style="text-align:center;">
+        <div id="all" style="text-align:center; margin-top: 50px;">
+            <h1 class="glow-title">Welcome to SCORPION HACK</h1>
+
+    <!-- Scorpion Platform Selection -->
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ps3/auto490/index.html" onMouseOver="msgs.innerHTML='Scorpion Hack - PS3 Section'"><img src="pic/Firmwareps3.png"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="2index.html" onMouseOver="msgs.innerHTML='Scorpion Hack - PS4 Main Menu'"><img src="pic/Firmwareps4.png"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ps5/index.html" onMouseOver="msgs.innerHTML='Scorpion Hack - PS5 Section'"><img src="pic/Firmwareps5.png"></a>
+    
+    <br><br>
+    
+    <!-- Scorpion Tools & Themes -->
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tools/index.html" onMouseOver="msgs.innerHTML='Scorpion PlayStation Tools Collection'"><img src="pic/tools.png"></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="themes/index.html" onMouseOver="msgs.innerHTML='Custom Scorpion Themes for PS4'"><img src="pic/themes.png"></a>
+</div> <!-- End of 'all' div -->
+</div> <!-- End of 'container' div -->
+
+<!-- The Hover Message Display -->
+<h1 id="msgs" style="font-size:30px; text-align:center; color:#00f2ff; text-shadow: 0 0 10px #00f2ff; margin-top: 50px;"></h1>
+
+<script>
+    // Initialize the message
+    document.getElementById('msgs').innerHTML = 'WELCOME TO SCORPION HACK';
+</script>
 </body>
 </html>
