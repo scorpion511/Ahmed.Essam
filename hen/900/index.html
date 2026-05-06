@@ -1,51 +1,74 @@
 <!DOCTYPE html>
 <html manifest="cache.manifest">
 <head>
+<meta charset="utf-8">
+<meta name="author" content="Ahmed ESSAM">
 <title>SCORPION HACK 9.00 AUTO</title>
 <style>
 html, body {
-background-image: url("img.jpg");
-background-size: 100%;
-background-repeat: no-repeat;
-background-color: #24272b;
-color: white;
-text-align: center;
-margin: 0px;
-overflow: hidden;
+    background-image: url("img.jpg"); /* Local image in hen/900 folder */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #24272b;
+    color: white;
+    text-align: center;
+    margin: 0px;
+    overflow: hidden;
+    font-family: sans-serif;
 }
 
 h1 {
-    text-shadow: 0.1em 0.1em 0.2em black;
+    text-shadow: 0 0 10px black;
     font-size: 25px;
     color: white;
 }
 
-a {
-    text-decoration: none;
+/* Glowing Title Animation */
+#msgs {
+    font-size: 32px;
+    margin-top: 250px;
+    text-shadow: 0 0 15px #fc0404;
+}
+
+/* Custom Credits Box */
+.credits-box {
+    margin-top: 50px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    border-radius: 10px;
 }
 
 #console {
     display: none;
 }
 </style>
+
 <script>
+// Check if page is cached; if not, go to installer
 if (window.applicationCache.status=='0'){window.location.replace("cache.html");}
 </script>
+
+<!-- Exploit Components -->
 <script src="payload.js"></script>
 <script type='module' src='./alert.mjs'></script>
 </head>
+
 <body>
 <pre id='console'></pre>
-<br>
-<h1 id=msgs style="font-size: 30px;margin-top: 285px;margin-bottom: 230px;">
-    Scorpion Hack <font color=#fc0404>( Please wait ) ....</font>
+
+<h1 id="msgs">
+    SCORPION HACK <span style="color:#fc0404;">( Please wait ) ....</span>
 </h1>
-<br>
-<div style="margin-top: 20px;">
-    <h1 style="color: #fc0404;">Special Thanks to: 
-        <span style="color: white; margin-left: 15px;">Dareen Omar jojo</span>
-        <span style="color: white; margin-left: 15px;">Compiled By Ahmed ESSAM</span>
+
+<div class="credits-box">
+    <h1 style="color: #fc0404; font-size: 22px;">Special Thanks to: 
+        <span style="color: white; margin-left: 10px;">Dareen Omar jojo</span>
+    </h1>
+    <h1 style="color: #00f2ff; font-size: 20px; text-shadow: 0 0 8px #00f2ff;">
+        Compiled By Ahmed ESSAM
     </h1>
 </div>
+
 </body>
 </html>
