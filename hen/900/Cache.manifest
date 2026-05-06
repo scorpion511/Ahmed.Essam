@@ -1,18 +1,18 @@
 CACHE MANIFEST 
-# Scorpion Hack v9.1 - Final Path Alignment
-# (Dareen Omar jojo & Ahmed ESSAM)
+# Scorpion Hack v10.0 - Final Red X Fix
 
 CACHE:
-# 1. Main Root Files (Two levels up)
-../../1index.html
-../../2index.html
-../../img.jpg
-../../logo.png
+# 1. Main Root Files (Using Full URLs to fix Red X)
+https://github.io
+https://github.io
+https://github.io
+https://github.io
+https://github.io
 
-# 2. The Index inside the /hen/ folder (One level up)
+# 2. The Index inside the /hen/ folder (Keep this, it's already OK)
 ../index.html
 
-# 3. Subfolder Files (Inside /hen/900/ with this manifest)
+# 3. Subfolder Files (Keep these, they are already OK)
 img.jpg
 index.html
 alert.mjs
