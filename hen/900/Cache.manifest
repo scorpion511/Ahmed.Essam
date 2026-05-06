@@ -1,7 +1,15 @@
 CACHE MANIFEST 
-# Scorpion Hack v6.1 (Dareen Omar jojo & Ahmed ESSAM)
+# Scorpion Hack v6.2 (Dareen Omar jojo & Ahmed ESSAM)
 
 CACHE:
+# Root files (Two folders up)
+../../index.html
+../../1index.html
+../../2index.html
+../../img.jpg
+../../logo.png
+
+# Subfolder files
 img.jpg
 index.html
 alert.mjs
