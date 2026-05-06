@@ -1,123 +1,173 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html manifest="cache.manifest">
 <head>
-<style>
-html, body {
-    /* Updated to match your new theme */
-    background-image: url('img.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #24272b;
-    color: white;
-    text-align: center;
-    margin: 0px;
-    overflow: hidden;
-    font-family: sans-serif;
-}
-
-h1 {
-    text-shadow: 0.1em 0.1em 0.2em black;
-    font-size: 25px;
-    text-align: center;
-    color: white;
-}
-
-/* Updated Clock and Date with Frost Blue Glow */
-#clock {
-    float: right;
-    margin-right: 2.25%;
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 28px;
-    color: #00f2ff;
-    text-shadow: 0 0 10px #00f2ff;
-}
-
-#date {
-    float: left;
-    margin-left: 140px; /* Space for your logo */
-    font-weight: bold;
-    margin-top: 15px;
-    font-size: 28px;
-    color: #00f2ff;
-    text-shadow: 0 0 10px #00f2ff;
-}
-
-/* Shake animation kept for consistency */
-a:hover {
-    animation: shake 0.5s infinite;
-}
-@keyframes shake {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-5px); }
-    40% { transform: translateX(5px); }
-    100% { transform: translateX(0); }
-}
-</style>
-
-<script>
-    function showdate() {
-        var dt = new Date();
-        var Hour = dt.getHours();
-        var Minute = dt.getMinutes();
-        var Day = dt.getDate();
-        var Month = dt.getMonth() + 1;
-        var Year = dt.getFullYear();
-        if (Minute < 10) { Minute = "0" + Minute; };
-        if (Hour < 10) { Hour = "0" + Hour; };
-        document.getElementById("date").innerHTML = (Day + "/" + Month + "/" + Year);
-        document.getElementById("clock").innerHTML = (Hour + ":" + Minute);
-    }
-    setInterval(showdate, 1000); // Fixed from 0 to 1000 for better performance
-</script>
-
-<head>
-    <!-- Metadata & Credits -->
     <meta charset="utf-8">
     <meta name="author" content="Ahmed ESSAM">
     <meta name="description" content="Scorpion Hack designed by Ahmed ESSAM for Dareen Omar jojo">
     <title>WELCOME TO SCORPION HACK</title>
-</head>
+    <style>
+        html, body {
+            background-image: url('img.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #24272b;
+            color: white;
+            text-align: center;
+            margin: 0px;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
 
-<body onload="showdate()" class="bg-darker">
-    <!-- 1. Clock and Date (Top Layer) -->
+        /* logo.png in top left */
+        .logo {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 120px;
+            height: auto;
+            filter: drop-shadow(0 0 5px #00f2ff);
+        }
+
+        h1 {
+            text-shadow: 0.1em 0.1em 0.2em black;
+            font-size: 25px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Updated Clock and Date with Frost Blue Glow */
+        #clock {
+            float: right;
+            margin-right: 2.25%;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 28px;
+            color: #00f2ff;
+            text-shadow: 0 0 10px #00f2ff;
+        }
+
+        #date {
+            float: left;
+            margin-left: 145px; /* Space for your logo */
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 28px;
+            color: #00f2ff;
+            text-shadow: 0 0 10px #00f2ff;
+        }
+
+        /* Glowing Black Fire Rectangle Styling */
+        .fire-link {
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .fire-rect {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 15px 30px;
+            border-radius: 8px;
+            border: 2px solid #ff4500;
+            box-shadow: 0 0 15px #ff4500, inset 0 0 5px #ff8c00;
+            color: #ff4500;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: firePulse 1.5s infinite alternate;
+        }
+
+        @keyframes firePulse {
+            from { text-shadow: 0 0 5px #ff4500; box-shadow: 0 0 10px #ff4500; }
+            to { text-shadow: 0 0 20px #ff0000; box-shadow: 0 0 25px #ff0000; }
+        }
+
+        .fire-rect:hover {
+            background: #ff4500;
+            color: white;
+            box-shadow: 0 0 30px #ff4500;
+            transform: scale(1.1);
+        }
+
+        /* Title Glow Animation */
+        .glow-title {
+            font-size: 45px;
+            color: #fff;
+            animation: titleGlow 1.5s ease-in-out infinite alternate;
+            margin-top: 80px;
+        }
+
+        @keyframes titleGlow {
+            from { text-shadow: 0 0 10px #fff, 0 0 20px #fc0404, 0 0 30px #fc0404; }
+            to { text-shadow: 0 0 20px #fff, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d; }
+        }
+    </style>
+    <script>
+        function showdate() {
+            var dt = new Date();
+            var Hour = dt.getHours();
+            var Minute = dt.getMinutes();
+            var Day = dt.getDate();
+            var Month = dt.getMonth() + 1;
+            var Year = dt.getFullYear();
+            if (Minute < 10) { Minute = "0" + Minute; };
+            if (Hour < 10) { Hour = "0" + Hour; };
+            document.getElementById("date").innerHTML = (Day + "/" + Month + "/" + Year);
+            document.getElementById("clock").innerHTML = (Hour + ":" + Minute);
+        }
+        setInterval(showdate, 1000);
+    </script>
+</head>
+<body onload="showdate()">
+    <!-- 1. Clock and Date -->
     <span id="date"></span>
     <span id="clock"></span>
 
-    <!-- 2. Your Logo (Top Left) -->
+    <!-- 2. Your Logo -->
     <img src="logo.png" class="logo">
 
-    <!-- 3. Your Name (Directly under Logo) -->
+    <!-- 3. Your Name -->
     <div style="position: absolute; top: 130px; left: 15px; font-weight: bold; text-align: left;">
         <span style="color: #00f2ff; text-shadow: 0 0 10px #00f2ff; font-size: 20px;">
             Designed By Ahmed ESSAM
         </span>
     </div>
 
-    <!-- 4. Main Menu Container -->
+    <!-- 4. Main Menu -->
     <div id="container" style="text-align:center;">
-        <div id="all" style="text-align:center; margin-top: 50px;">
+        <div id="all" style="text-align:center;">
             <h1 class="glow-title">Welcome to SCORPION HACK</h1>
+            <br>
+            <!-- Platform Selection (Fire Glow Text Only) -->
+            <a href="ps3/auto490/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Hack - PS3 Section'">
+                <div class="fire-rect">PS3 EXPLOIT</div>
+            </a>
 
-    <!-- Scorpion Platform Selection -->
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ps3/auto490/index.html" onMouseOver="msgs.innerHTML='Scorpion Hack - PS3 Section'"><img src="pic/Firmwareps3.png"></a>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="2index.html" onMouseOver="msgs.innerHTML='Scorpion Hack - PS4 Main Menu'"><img src="pic/Firmwareps4.png"></a>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ps5/index.html" onMouseOver="msgs.innerHTML='Scorpion Hack - PS5 Section'"><img src="pic/Firmwareps5.png"></a>
-    
-    <br><br>
-    
-    <!-- Scorpion Tools & Themes -->
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tools/index.html" onMouseOver="msgs.innerHTML='Scorpion PlayStation Tools Collection'"><img src="pic/tools.png"></a>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="themes/index.html" onMouseOver="msgs.innerHTML='Custom Scorpion Themes for PS4'"><img src="pic/themes.png"></a>
-</div> <!-- End of 'all' div -->
-</div> <!-- End of 'container' div -->
+            <a href="2index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Hack - PS4 Main Menu'">
+                <div class="fire-rect">PS4 MAIN MENU</div>
+            </a>
 
-<!-- The Hover Message Display -->
-<h1 id="msgs" style="font-size:30px; text-align:center; color:#00f2ff; text-shadow: 0 0 10px #00f2ff; margin-top: 50px;"></h1>
+            <a href="ps5/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Hack - PS5 Section'">
+                <div class="fire-rect">PS5 EXPLOIT</div>
+            </a>
+            
+            <br><br>
+            
+            <a href="tools/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion PlayStation Tools Collection'">
+                <div class="fire-rect">TOOLS</div>
+            </a>
 
-<script>
-    // Initialize the message
-    document.getElementById('msgs').innerHTML = 'WELCOME TO SCORPION HACK';
-</script>
+            <a href="themes/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Custom Scorpion Themes for PS4'">
+                <div class="fire-rect">THEMES</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- 5. Message Area -->
+    <h1 id="msgs" style="font-size:30px; text-align:center; color:#00f2ff; text-shadow: 0 0 10px #00f2ff; margin-top: 50px;"></h1>
+
+    <script>
+        document.getElementById('msgs').innerHTML = 'WELCOME TO SCORPION HACK';
+    </script>
 </body>
 </html>
