@@ -1,5 +1,5 @@
 CACHE MANIFEST 
-# Scorpion Hack v15.0 - Ultimate Edition
+# Scorpion Hack v16.0 - Ultimate Edition
 # Designed By Ahmed ESSAM for Dareen Omar jojo
 
 # Subfolder Files (Inside hen/900)
@@ -41,13 +41,3 @@ module/rw.mjs
 module/utils.mjs
 module/view.mjs
 rop/900.mjs
-
-# Menu Files (Climbing up to Root)
-../../index.html
-../../1index.html
-../../2index.html
-../../logo.png
-../../img.jpg
-
-NETWORK:
-*
