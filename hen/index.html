@@ -1,21 +1,120 @@
 <!DOCTYPE html>
-<html manifest="900/cache.manifest"> <!-- REMOVED 'hen/' FROM THE PATH -->
+<html manifest="900/cache.manifest">
 <head>
-    <meta charset="utf-8">
-    <title>SCORPION HACK - REDIRECT</title>
-    <!-- Corrected redirect path: you are already in 'hen', just go to '900' -->
-    <meta http-equiv="refresh" content="0; url=900/index.html"> 
-    <style>
-        body { background-color: #24272b; color: white; text-align: center; margin-top: 20%; font-family: sans-serif; }
-        .loader { color: #fc0404; font-size: 28px; font-weight: bold; text-shadow: 0 0 10px #fc0404; }
-    </style>
+<meta charset="utf-8">
+<meta name="author" content="Ahmed ESSAM">
+<title>SCORPION HACK - REDIRECTING</title>
+<style>
+html, body {
+    background-image: url('../img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #24272b;
+    color: white;
+    text-align: center;
+    margin: 0px;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+h1 {
+    text-shadow: 0.1em 0.1em 0.2em black;
+    font-size: 35px;
+    text-align: center;
+    color: #fc0404; 
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #fc0404; }
+    to { text-shadow: 0 0 20px #ff4d4d; }
+}
+
+/* --- THE MISSING CSS FOR FIRE RECTANGLES --- */
+.fire-link {
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+}
+
+.fire-rect {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.85); 
+    padding: 15px 30px;
+    border-radius: 8px;
+    border: 2px solid #ff4500;
+    box-shadow: 0 0 15px #ff4500, inset 0 0 5px #ff8c00;
+    color: #ff4500;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: firePulse 1.5s infinite alternate;
+}
+
+@keyframes firePulse {
+    from { text-shadow: 0 0 5px #ff4500; box-shadow: 0 0 10px #ff4500; }
+    to { text-shadow: 0 0 20px #ff0000; box-shadow: 0 0 25px #ff0000; }
+}
+
+a:hover {
+    transform: scale(1.1);
+}
+</style>
 </head>
-<body>
-    <div class="loader">SCORPION HACK</div>
-    <p>Redirecting to GoldHEN 9.00 Auto...</p>
-    <script>
-        // Use relative path since you are already in the hen folder
-        setTimeout(function(){ window.location.replace("900/index.html"); }, 1000);
-    </script>
+
+<body> <!-- Added missing body tag -->
+<br><br><br><br>
+
+<div id="container" style="text-align:center;">
+    
+    <!-- ROW 1: MAIN FIRMWARE EXPLOITS -->
+    <a href="hen/505/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Hack - FW 5.05 GoldHEN'" onMouseOut="msgs.innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
+        <div class="fire-rect">5.05 FW GoldHEN</div>
+    </a>
+
+    <a href="hen/672/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Hack - FW 6.72 GoldHEN'" onMouseOut="msgs.innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
+        <div class="fire-rect">6.72 FW GoldHEN</div>
+    </a>
+
+    <a href="hen/702/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Hack - FW 7.02 GoldHEN'" onMouseOut="msgs.innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
+        <div class="fire-rect">7.02 FW GoldHEN</div>
+    </a>
+
+    <a href="hen/755/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Hack - FW 7.55 GoldHEN'" onMouseOut="msgs.innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
+        <div class="fire-rect">7.55 FW GoldHEN</div>
+    </a>
+
+    <br><br>
+
+    <!-- ROW 2: 9.00 AND UTILITIES -->
+    <a href="hen/900/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Hack - FW 9.00 GoldHEN (AUTO)'" onMouseOut="msgs.innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
+        <div class="fire-rect" style="border-color: #00f2ff; color: #00f2ff; box-shadow: 0 0 15px #00f2ff;">9.00 FW GoldHEN</div>
+    </a>
+
+    <a href="hen/restore/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Restore - Save Page to User Guide'" onMouseOut="msgs.innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
+        <div class="fire-rect">RESTORE GUIDE</div>
+    </a>
+
+    <br><br>
+
+    <!-- ROW 3: TRAINERS & TOOLS -->
+    <a href="trainer/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Game Trainers - Cheats Menu'" onMouseOut="msgs.innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
+        <div class="fire-rect">GAME TRAINERS</div>
+    </a>
+
+    <a href="tools/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Tools - PS4 Utilities Collection'" onMouseOut="msgs.innerHTML='WELCOME TO SCORPION HACK ALL IN 1'">
+        <div class="fire-rect">PS4 TOOLS</div>
+    </a>
+
+</div>
+
+<!-- FINAL FOOTER SECTION -->
+<h1 id="msgs" style="font-size:35px; text-align:center; color:#00f2ff; text-shadow: 0 0 10px #00f2ff; margin-top: 40px;">
+    WELCOME TO SCORPION HACK ALL IN 1
+</h1>
+
+<script>
+    document.getElementById('msgs').innerHTML = 'WELCOME TO SCORPION HACK ALL IN 1';
+</script>
 </body>
 </html>
