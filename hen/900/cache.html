@@ -1,31 +1,41 @@
 <!DOCTYPE html>
-<html manifest="cache.manifest">
+<html manifest="Cache.manifest">
 <head>
-<title>SCORPION HACK OFFLINE</title>
+<title>SCORPION HACK OFFLINE INSTALLER</title>
 <style>
 html, body {
-background-image: url('img.jpg');
-background-size: 100%;
-background-repeat: no-repeat;
-background-color: #24272b;
-color: white;
-text-align: center;
-margin: 0px;
-overflow: hidden;
+    background-image: url('img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #24272b;
+    color: white;
+    text-align: center;
+    margin: 0px;
+    overflow: hidden;
+    font-family: sans-serif;
 }
 h1 {
-text-shadow: 0.1em 0.1em 0.2em black;
-font-size: 25px;
-text-align: center;
-color: white;
+    text-shadow: 0.1em 0.1em 0.2em black;
+    font-size: 25px;
+    text-align: center;
+    color: white;
 }
-a {
-text-decoration: none;
+#progress {
+    font-size: 35px;
+    margin-top: 77px;
+    margin-bottom: 250px;
+    color: #00f2ff; /* Frost Blue progress text */
+    text-shadow: 0 0 10px #00f2ff;
+}
+.credits {
+    margin-top: 150px;
+    color: #fc0404; /* Scorpion Red */
 }
 </style>
 </head>
 <body>
 <script>
+/* Al-Azif / Wolf History Logic Kept for Stability */
 history.replaceState(null,null,'index.html');
 var histlength=history.length;
 history.go(-histlength);
@@ -37,26 +47,30 @@ function DLProgress(e){
 
 function DisplayCacheProgress(){
     window.progress.innerHTML="Cache Installed Successfully ✔";
-    setTimeout(function(){window.progress.innerHTML="Now Close And Re-Open Your Browser ..";},2500);
+    setTimeout(function(){
+        window.progress.innerHTML="Now Close And Re-Open Your Browser ..";
+    }, 2500);
 }
 
 window.applicationCache.addEventListener("progress",DLProgress,false);
 window.applicationCache.oncached=function(e){DisplayCacheProgress();};
 window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
-window.applicationCache.onerror=function(e){window.progress.innerHTML="Cache Error: Check manifest file paths!";};
+window.applicationCache.onerror=function(e){
+    window.progress.innerHTML="Cache Error: Check manifest paths or clear browser data!";
+    window.progress.style.color="red";
+};
 </script>
 
 <br><br><br><br><br><br>
-<h1 id="progress" style="font-size: 35px; margin-top: 77px; margin-bottom: 250px; color: #fc0404;">
-    Initializing Scorpion Hack...
-</h1>
-<br>
+<!-- Initializing Message -->
+<h1 id="progress">Initializing Scorpion Hack Cache...</h1>
 
-<div style="margin-top: 170px;">
-    <h1 style="color: #fc0404;">Special Thanks to: 
+<div class="credits">
+    <h1>Special Thanks to: 
         <span style="color: white; margin-left: 15px;">Dareen Omar jojo</span>
         <span style="color: white; margin-left: 15px;">Ahmed ESSAM</span>
     </h1>
+    <p style="color: white; opacity: 0.6;">Based on Sleirsgoevy, ChendoChap, SiSTR0 & SpecterDev</p>
 </div>
 
 </body>
