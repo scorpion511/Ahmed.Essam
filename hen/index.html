@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="cache.manifest">
+<html manifest="hen/900/cache.manifest">
 <head>
     <meta charset="utf-8">
     <title>SCORPION HACK - REDIRECT</title>
@@ -7,15 +7,15 @@
     <meta http-equiv="refresh" content="0; url=hen/900/index.html">
     <style>
         body { background-color: #24272b; color: white; text-align: center; margin-top: 20%; font-family: sans-serif; }
-        .loader { color: #fc0404; font-size: 28px; font-weight: bold; }
+        .loader { color: #fc0404; font-size: 28px; font-weight: bold; text-shadow: 0 0 10px #fc0404; }
     </style>
 </head>
 <body>
     <div class="loader">SCORPION HACK</div>
     <p>Redirecting to GoldHEN 9.00 Auto...</p>
     <script>
-        // Backup redirect
-        setTimeout(function(){ window.location.href = "hen/900/index.html"; }, 1000);
+        // Backup redirect using replace to prevent back-button loops
+        setTimeout(function(){ window.location.replace("hen/900/index.html"); }, 1000);
     </script>
 </body>
 </html>
