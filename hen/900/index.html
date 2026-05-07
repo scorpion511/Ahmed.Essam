@@ -1,74 +1,89 @@
-<!DOCTYPE html>
-<html manifest="Cache.manifest">
+<html>
 <head>
-<meta charset="utf-8">
-<meta name="author" content="Ahmed ESSAM">
-<title>SCORPION HACK 9.00 AUTO</title>
-<style>
-html, body {
-    background-image: url("img.jpg"); /* Local image in hen/900 folder */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #24272b;
-    color: white;
-    text-align: center;
-    margin: 0px;
-    overflow: hidden;
-    font-family: sans-serif;
-}
+    <title>The Scorpio Host - Ahmed Essam</title>
+    <style>
+        html, body {
+            background: url('img.jpg') no-repeat center center fixed; 
+            background-size: cover;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
 
-h1 {
-    text-shadow: 0 0 10px black;
-    font-size: 25px;
-    color: white;
-}
+        /* Scorpio Status Container */
+        .status-box {
+            margin-top: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            display: inline-block;
+            padding: 50px 70px;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
+        }
 
-/* Glowing Title Animation */
-#msgs {
-    font-size: 32px;
-    margin-top: 250px;
-    text-shadow: 0 0 15px #fc0404;
-}
+        #msgs {
+            font-size: 32px;
+            font-weight: bold;
+            color: #e0faff;
+            text-shadow: 0 0 15px rgba(0, 229, 255, 0.8);
+            letter-spacing: 2px;
+        }
 
-/* Custom Credits Box */
-.credits-box {
-    margin-top: 50px;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    display: inline-block;
-    border-radius: 10px;
-}
+        /* Animated Loader */
+        .loader {
+            margin: 30px auto;
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid #00e5ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-#console {
-    display: none;
-}
-</style>
+        /* Designer Credit Rectangle */
+        .designer-credit {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 229, 255, 0.4);
+            padding: 10px 40px;
+            border-radius: 4px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #00e5ff;
+        }
+        .designer-credit span { color: white; font-weight: bold; }
 
-<script>
-// Check if page is cached; if not, go to installer
-if (window.applicationCache.status=='0'){window.location.replace("cache.html");}
-</script>
+        #console { display: none; }
+    </style>
 
-<!-- Exploit Components -->
-<script src="payload.js"></script>
-<script type='module' src='./alert.mjs'></script>
+    <!-- RESTORED WOLF ORIGINAL LOGIC -->
+    <script>
+        if (window.applicationCache.status=='0'){window.location.replace("cache.html");}
+    </script>
+    <script src="payload.js"></script>
+    <script type='module' src='./alert.mjs'></script>
 </head>
-
 <body>
-<pre id='console'></pre>
+    <pre id='console'></pre>
 
-<h1 id="msgs">
-    SCORPION HACK <span style="color:#fc0404;">( Please wait ) ....</span>
-</h1>
+    <div class="status-box">
+        <img src="../../logo.png" style="width: 220px; margin-bottom: 25px; filter: drop-shadow(0 0 10px #00e5ff);">
+        <h1 id="msgs">Jailbreaking <span style="color:#fc0404;">( Please wait ) ....</span></h1>
+        <div class="loader"></div>
+    </div>
 
-<div class="credits-box">
-    <h1 style="color: #fc0404; font-size: 22px;">Special Thanks to: 
-        <span style="color: white; margin-left: 10px;">Dareen Omar jojo</span>
-    </h1>
-    <h1 style="color: #00f2ff; font-size: 20px; text-shadow: 0 0 8px #00f2ff;">
-        Compiled By Ahmed ESSAM
-    </h1>
-</div>
-
+    <div class="designer-credit">
+        Designed and Compiled By <span>Ahmed Essam</span>
+    </div>
 </body>
 </html>
