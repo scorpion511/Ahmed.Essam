@@ -1,23 +1,29 @@
 <html manifest="Cache.manifest">
 <head>
-<title>Scorpio Cache - Ahmed Essam</title>
 <style>
 body{background:url('img.jpg') #24272b no-repeat center;background-size:cover;color:white;text-align:center;margin:0;overflow:hidden;font-family:sans-serif;}
-.credit{position:absolute;bottom:20px;width:100%;color:#00e5ff;font-size:14px;letter-spacing:1px;}
-#progress{font-size:30px;margin-top:150px;text-shadow:2px 2px 5px black;}
+.credit{position:absolute;bottom:20px;width:100%;color:#00e5ff;font-size:14px;}
+#progress{font-size:30px;margin-top:200px;text-shadow:2px 2px 5px black;}
+.rainbow {
+  font-size: 20px; font-weight: bold; margin-top: 50px;
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  animation: rainbow-move 3s linear infinite; background-size: 400% 100%;
+}
+@keyframes rainbow-move { 0% {background-position: 0% 0%;} 100% {background-position: 100% 0%;} }
 </style>
 </head>
 <body>
 <script>
 history.replaceState(null,null,'index.html');var histlength=history.length;history.go(-histlength);
-function DLProgress(e){Percent=(Math.round(e.loaded/e.total*100));window.progress.innerHTML="Installing Scorpio Cache: "+Percent+"%";}
-function DisplayCacheProgress(){window.progress.innerHTML="Scorpio Cache Installed ✔";setTimeout(function(){window.progress.innerHTML="Close and Re-Open Browser";},2000);}
+function DLProgress(e){Percent=(Math.round(e.loaded/e.total*100));window.progress.innerHTML="Scorpio Caching: "+Percent+"%";}
+function DisplayCacheProgress(){window.progress.innerHTML="Scorpio Cache Installed ✔";setTimeout(function(){window.progress.innerHTML="Close & Re-Open Browser";},2000);}
 window.applicationCache.addEventListener("progress",DLProgress,false);
 window.applicationCache.oncached=function(e){DisplayCacheProgress();};
 window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
 </script>
-<h1 id="progress">Initializing Cache...</h1>
+<h1 id="progress">Initializing...</h1>
+<div class="rainbow">Have A Nice Time Dareen&Omar&jojo</div>
 <div class="credit">Designed and Compiled By <b>Ahmed Essam</b></div>
-<div style="margin-top:150px;font-size:12px;color:rgba(255,255,255,0.4)">Special Thanks: @sleirsgoevy, ChendoChap, SpecterDev, SiSTR0, Znullptr</div>
 </body>
 </html>
