@@ -1,173 +1,116 @@
-<!DOCTYPE html>
-<html manifest="Cache.manifest">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Ahmed ESSAM">
-    <meta name="description" content="Scorpion Hack designed by Ahmed ESSAM for Dareen Omar jojo">
-    <title>WELCOME TO SCORPION HACK</title>
+    <title>Scorpio Project - Menu</title>
     <style>
         html, body {
-            background-image: url('img.jpg');
+            background: url('img.jpg') no-repeat center center fixed; 
             background-size: cover;
-            background-repeat: no-repeat;
-            background-color: #24272b;
             color: white;
             text-align: center;
-            margin: 0px;
+            margin: 0;
+            padding: 0;
             overflow: hidden;
-            font-family: sans-serif;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
         }
 
-        /* logo.png in top left */
-        .logo {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            width: 120px;
-            height: auto;
-            filter: drop-shadow(0 0 5px #00f2ff);
-        }
-
-        h1 {
-            text-shadow: 0.1em 0.1em 0.2em black;
-            font-size: 25px;
-            text-align: center;
-            color: white;
-        }
-
-        /* Updated Clock and Date with Frost Blue Glow */
-        #clock {
-            float: right;
-            margin-right: 2.25%;
-            margin-top: 15px;
+        /* Top Bar for Clock and Date */
+        .top-bar {
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 24px;
             font-weight: bold;
-            font-size: 28px;
-            color: #00f2ff;
-            text-shadow: 0 0 10px #00f2ff;
+            text-shadow: 0px 0px 10px rgba(0, 229, 255, 0.5);
         }
 
-        #date {
-            float: left;
-            margin-left: 145px; /* Space for your logo */
-            font-weight: bold;
-            margin-top: 15px;
-            font-size: 28px;
-            color: #00f2ff;
-            text-shadow: 0 0 10px #00f2ff;
+        /* Your Logo Branding */
+        .scorpio-logo {
+            width: 300px;
+            margin-top: 20px;
+            filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8));
         }
 
-        /* Glowing Black Fire Rectangle Styling */
-        .fire-link {
-            text-decoration: none;
-            display: inline-block;
-            margin: 10px;
+        /* Button Container */
+        .menu-container {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
         }
 
-        .fire-rect {
-            display: inline-block;
-            background: rgba(0, 0, 0, 0.85);
-            padding: 15px 30px;
-            border-radius: 8px;
-            border: 2px solid #ff4500;
-            box-shadow: 0 0 15px #ff4500, inset 0 0 5px #ff8c00;
-            color: #ff4500;
+        /* The Frost Glowing Button */
+        .scorpio-btn {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 229, 255, 0.4);
+            color: #e0faff;
+            padding: 20px 40px;
             font-size: 20px;
-            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
             text-transform: uppercase;
-            animation: firePulse 1.5s infinite alternate;
+            letter-spacing: 2px;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+            transition: 0.4s;
         }
 
-        @keyframes firePulse {
-            from { text-shadow: 0 0 5px #ff4500; box-shadow: 0 0 10px #ff4500; }
-            to { text-shadow: 0 0 20px #ff0000; box-shadow: 0 0 25px #ff0000; }
+        .scorpio-btn:hover {
+            background: rgba(0, 229, 255, 0.1);
+            box-shadow: 0 0 35px rgba(0, 229, 255, 0.8);
+            border: 1px solid rgba(0, 229, 255, 1);
+            transform: scale(1.05);
         }
 
-        .fire-rect:hover {
-            background: #ff4500;
-            color: white;
-            box-shadow: 0 0 30px #ff4500;
-            transform: scale(1.1);
+        /* Designer Credit Rectangle */
+        .designer-credit {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 229, 255, 0.4);
+            padding: 10px 40px;
+            border-radius: 4px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #00e5ff;
         }
 
-        /* Title Glow Animation */
-        .glow-title {
-            font-size: 45px;
-            color: #fff;
-            animation: titleGlow 1.5s ease-in-out infinite alternate;
-            margin-top: 80px;
-        }
-
-        @keyframes titleGlow {
-            from { text-shadow: 0 0 10px #fff, 0 0 20px #fc0404, 0 0 30px #fc0404; }
-            to { text-shadow: 0 0 20px #fff, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d; }
-        }
+        .designer-credit span { color: white; font-weight: bold; }
     </style>
+    
     <script>
-        function showdate() {
+        function updateTime() {
             var dt = new Date();
-            var Hour = dt.getHours();
-            var Minute = dt.getMinutes();
-            var Day = dt.getDate();
-            var Month = dt.getMonth() + 1;
-            var Year = dt.getFullYear();
-            if (Minute < 10) { Minute = "0" + Minute; };
-            if (Hour < 10) { Hour = "0" + Hour; };
-            document.getElementById("date").innerHTML = (Day + "/" + Month + "/" + Year);
-            document.getElementById("clock").innerHTML = (Hour + ":" + Minute);
+            document.getElementById("date").innerHTML = dt.toLocaleDateString();
+            document.getElementById("clock").innerHTML = dt.getHours().toString().padStart(2, '0') + ":" + dt.getMinutes().toString().padStart(2, '0');
         }
-        setInterval(showdate, 1000);
+        setInterval(updateTime, 1000);
     </script>
 </head>
-<body onload="showdate()">
-    <!-- 1. Clock and Date -->
-    <span id="date"></span>
-    <span id="clock"></span>
 
-    <!-- 2. Your Logo -->
-    <img src="logo.png" class="logo">
-
-    <!-- 3. Your Name -->
-    <div style="position: absolute; top: 130px; left: 15px; font-weight: bold; text-align: left;">
-        <span style="color: #00f2ff; text-shadow: 0 0 10px #00f2ff; font-size: 20px;">
-            Designed By Ahmed ESSAM
-        </span>
+<body onload="updateTime()">
+    <div class="top-bar">
+        <span id="date"></span>
+        <span id="clock"></span>
     </div>
 
-    <!-- 4. Main Menu -->
-    <div id="container" style="text-align:center;">
-        <div id="all" style="text-align:center;">
-            <h1 class="glow-title">Welcome to SCORPION HACK</h1>
-            <br>
-            <!-- Platform Selection (Fire Glow Text Only) -->
-            <a href="ps3/auto490/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Hack - PS3 Section'">
-                <div class="fire-rect">PS3 EXPLOIT</div>
-            </a>
+    <!-- Your Center Logo -->
+    <img src="logo.png" class="scorpio-logo">
 
-            <a href="2index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Hack - PS4 Main Menu'">
-                <div class="fire-rect">PS4 MAIN MENU</div>
-            </a>
-
-            <a href="ps5/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion Hack - PS5 Section'">
-                <div class="fire-rect">PS5 EXPLOIT</div>
-            </a>
-            
-            <br><br>
-            
-            <a href="tools/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Scorpion PlayStation Tools Collection'">
-                <div class="fire-rect">TOOLS</div>
-            </a>
-
-            <a href="themes/index.html" class="fire-link" onMouseOver="msgs.innerHTML='Custom Scorpion Themes for PS4'">
-                <div class="fire-rect">THEMES</div>
-            </a>
-        </div>
+    <div class="menu-container">
+        <!-- Linking to your local folders for safety -->
+        <a href="hen/index.html" class="scorpio-btn">PS4 Jailbreak (9.00)</a>
+        <a href="ps5/index.html" class="scorpio-btn">PS5 Exploit</a>
+        <a href="ps3/index.html" class="scorpio-btn">PS3 Tools</a>
     </div>
 
-    <!-- 5. Message Area -->
-    <h1 id="msgs" style="font-size:30px; text-align:center; color:#00f2ff; text-shadow: 0 0 10px #00f2ff; margin-top: 50px;"></h1>
-
-    <script>
-        document.getElementById('msgs').innerHTML = 'WELCOME TO SCORPION HACK';
-    </script>
+    <div class="designer-credit">
+        Designed and Compiled By <span>Ahmed Essam</span>
+    </div>
 </body>
 </html>
