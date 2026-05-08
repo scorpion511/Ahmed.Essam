@@ -3,8 +3,8 @@
     <title>Scorpio Project - Firmware Selector</title>
     <style>
         html, body {
-            /* Since images are IN the hen folder, use the filenames directly */
-            background: url('img.jpg') no-repeat center center fixed; 
+            /* Full GitHub path to ensure background loads */
+            background: url('https://github.io') no-repeat center center fixed; 
             background-size: cover;
             background-color: #24272b;
             color: white;
@@ -25,7 +25,6 @@
             font-size: 24px;
             color: #00e5ff;
             margin-top: 20px;
-            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
         }
 
         .menu-container {
@@ -33,27 +32,22 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            flex-wrap: wrap;
         }
 
         .scorpio-btn {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(0, 229, 255, 0.4);
             color: #e0faff;
             padding: 15px 30px;
             font-size: 18px;
             border-radius: 6px;
-            cursor: pointer;
             text-decoration: none;
             text-transform: uppercase;
             box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
-            transition: 0.3s;
-            display: inline-block;
         }
 
-        /* --- THE REFINED COMPACT IDENTITY CARD --- */
+        /* HUD Card Styling */
         .scorpio-card {
             position: absolute;
             bottom: 5px;
@@ -73,13 +67,13 @@
         .name-banner { background: #ff0000; color: white; font-size: 20px; font-weight: bold; padding: 2px 25px; border-radius: 30px; display: inline-block; margin: 4px 0; box-shadow: 0 0 8px #ff0000; text-transform: uppercase; }
         .nice-time-text { font-size: 12px; color: #ffff00; margin-top: 2px; font-weight: bold; }
         .names-list { font-size: 20px; color: white; font-weight: bold; text-shadow: 0 0 8px #00f2ff; }
-
     </style>
 </head>
 <body>
 
-    <!-- Fixed Image Path: looking in current 'hen' folder -->
-    <img src="logo.png" class="scorpio-logo">
+    <!-- Full GitHub path for the logo -->
+    <img src="https://github.io" class="scorpio-logo">
+    
     <div id="msgs">Select Firmware Version</div>
 
     <div class="menu-container">
@@ -88,7 +82,6 @@
         <a href="900/index.html" class="scorpio-btn">FW 9.00</a>
     </div>
 
-    <!-- THE COMPACT SCORPIO HUD CARD -->
     <div class="scorpio-card">
         <div class="scorpio-title">Designed, Compiled by : <span class="scorpio-badge">Scorpio</span></div>
         <div class="name-banner">Ahmed ESSAM</div>
