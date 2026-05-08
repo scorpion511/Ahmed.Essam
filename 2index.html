@@ -13,6 +13,26 @@
             font-family: 'Segoe UI', Tahoma, sans-serif;
         }
 
+        /* Black Red Fire Effect Title */
+        .fire-title {
+            font-size: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #000; /* Black core */
+            margin-top: 20px;
+            letter-spacing: 5px;
+            text-shadow: 
+                0 0 5px #ff0000, 
+                0 -5px 10px #ff0000, 
+                2px -10px 15px #ff4b2b, 
+                -2px -20px 20px #ff4b2b;
+            animation: flicker 1.5s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { text-shadow: 0 0 5px #ff0000, 0 -5px 10px #ff0000; }
+            100% { text-shadow: 0 0 10px #ff0000, 0 -15px 25px #ff4b2b; }
+        }
+
         .top-bar {
             padding: 15px;
             display: flex;
@@ -22,7 +42,6 @@
             text-shadow: 0px 0px 10px rgba(0, 229, 255, 0.5);
         }
 
-        /* The Frost Glowing Button Style */
         .scorpio-btn {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(12px);
@@ -53,25 +72,31 @@
         #msgs {
             font-size: 28px;
             color: #00e5ff;
-            margin-top: 20px;
+            margin-top: 10px;
             height: 40px;
             text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
         }
 
-        .designer-credit {
+        /* --- THE SCORPIO IDENTITY CARD --- */
+        .scorpio-card {
             position: absolute;
-            bottom: 20px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 229, 255, 0.4);
-            padding: 8px 30px;
-            border-radius: 4px;
-            font-size: 32px;
-            color: #00e5ff;
+            background: rgba(0, 0, 0, 0.85);
+            border: 3px solid #00f2ff;
+            border-radius: 25px;
+            padding: 15px 50px;
+            box-shadow: 0 0 20px #00f2ff, inset 0 0 10px #00f2ff;
+            text-align: center;
+            min-width: 550px;
         }
-        .designer-credit span { color: white; font-weight: bold; }
+        .scorpio-title { font-size: 16px; color: #ffff00; font-weight: bold; margin-bottom: 5px; }
+        .scorpio-badge { border: 2px solid #ffff00; border-radius: 15px; padding: 2px 12px; display: inline-block; }
+        .name-banner { background: #ff0000; color: white; font-size: 28px; font-weight: bold; padding: 5px 40px; border-radius: 50px; display: inline-block; margin: 8px 0; box-shadow: 0 0 15px #ff0000; text-transform: uppercase; }
+        .nice-time-text { font-size: 16px; color: #ffff00; margin-top: 5px; font-weight: bold; }
+        .names-list { font-size: 28px; color: white; font-weight: bold; text-shadow: 0 0 10px #00f2ff; }
+
     </style>
 
     <script>
@@ -82,7 +107,6 @@
         }
         setInterval(updateTime, 1000);
 
-        /* WOLF Logic Functions */
         function allhost505(){ hideAll(); host505.style.display = "block"; }
         function allhost672(){ hideAll(); host672.style.display = "block"; }
         function allhost900c(){ hideAll(); host900c.style.display = "block"; }
@@ -107,20 +131,22 @@
         <span id="clock"></span>
     </div>
 
-    <img src="logo.png" style="width:220px; margin-bottom:10px;">
+    <!-- NEW FIRE TITLE -->
+    <div class="fire-title">WELCOME TO SCORPION HACK</div>
+    
+    <img src="logo.png" style="width:180px; margin: 10px auto;">
+    
     <div id="msgs">Select a Category</div>
 
-    <!-- MAIN MENU -->
     <div id="all">
-        <button class="scorpio-btn" onclick="allhost505()" onmouseover="msgs.innerHTML='Firmware 5.05 Options'">FW 5.05</button>
-        <button class="scorpio-btn" onclick="allhost672()" onmouseover="msgs.innerHTML='Firmware 6.72 Options'">FW 6.72</button>
-        <button class="scorpio-btn" onclick="allhost900c()" onmouseover="msgs.innerHTML='Firmware 9.00 Options'">FW 9.00</button>
+        <button class="scorpio-btn" onclick="allhost505()">FW 5.05</button>
+        <button class="scorpio-btn" onclick="allhost672()">FW 6.72</button>
+        <button class="scorpio-btn" onclick="allhost900c()">FW 9.00</button>
         <br>
-        <button class="scorpio-btn" onclick="allgoldhen()" onmouseover="msgs.innerHTML='GoldHEN Selection'">GoldHEN</button>
-        <button class="scorpio-btn" onclick="alltrainer()" onmouseover="msgs.innerHTML='PS4 Trainer & Cheats'">Trainers</button>
+        <button class="scorpio-btn" onclick="allgoldhen()">GoldHEN</button>
+        <button class="scorpio-btn" onclick="alltrainer()">Trainers</button>
     </div>
 
-    <!-- SUB MENUS (Local Links) -->
     <div id="host505" style="display:none">
         <a href="505/index.html" class="scorpio-btn">Load 5.05</a>
         <a href="restore/505/index.html" class="scorpio-btn">Restore (No USB)</a>
@@ -154,8 +180,12 @@
         <br><button class="scorpio-btn back" onclick="backall()">Back</button>
     </div>
 
-    <div class="designer-credit">
-        Designed and Compiled By <span>Ahmed Essam</span>
+    <!-- THE SCORPIO CARD -->
+    <div class="scorpio-card">
+        <div class="scorpio-title">Designed, Compiled by : <span class="scorpio-badge">Scorpio</span></div>
+        <div class="name-banner">Ahmed ESSAM</div>
+        <div class="nice-time-text">Have A Nice Time :</div>
+        <div class="names-list">Dareen & Omar & jojo</div>
     </div>
 </body>
 </html>
