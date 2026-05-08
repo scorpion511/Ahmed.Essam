@@ -13,102 +13,74 @@
             font-family: 'Segoe UI', Tahoma, sans-serif;
         }
 
+        /* Top Bar for Clock and Date */
         .top-bar {
-            padding: 10px;
+            padding: 15px;
             display: flex;
             justify-content: space-between;
-            font-size: 22px;
+            font-size: 24px;
             font-weight: bold;
             text-shadow: 0px 0px 10px rgba(0, 229, 255, 0.5);
         }
 
+        /* Your Logo Branding */
         .scorpio-logo {
-            width: 240px;
-            margin-top: 10px;
+            width: 300px;
+            margin-top: 20px;
             filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8));
         }
 
+        /* Button Container */
         .menu-container {
-            margin-top: 25px; /* Lifted buttons higher */
+            margin-top: 50px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
         }
 
+        /* The Frost Glowing Button */
         .scorpio-btn {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(0, 229, 255, 0.4);
             color: #e0faff;
-            padding: 15px 30px;
-            font-size: 18px;
+            padding: 20px 40px;
+            font-size: 20px;
             border-radius: 8px;
             cursor: pointer;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+            letter-spacing: 2px;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
             transition: 0.4s;
         }
 
         .scorpio-btn:hover {
             background: rgba(0, 229, 255, 0.1);
-            box-shadow: 0 0 30px rgba(0, 229, 255, 0.8);
+            box-shadow: 0 0 35px rgba(0, 229, 255, 0.8);
             border: 1px solid rgba(0, 229, 255, 1);
             transform: scale(1.05);
         }
 
-        /* --- THE REFINED COMPACT IDENTITY CARD --- */
-        .scorpio-card {
+        /* Designer Credit Rectangle */
+        .designer-credit {
             position: absolute;
-            bottom: 5px; /* Absolute bottom */
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.85); 
-            border: 1.5px solid #00f2ff; 
-            border-radius: 15px;
-            padding: 5px 25px;
-            box-shadow: 0 0 10px #00f2ff, inset 0 0 5px #00f2ff;
-            text-align: center;
-            min-width: 380px;
-            z-index: 100;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 229, 255, 0.4);
+            padding: 10px 40px;
+            border-radius: 4px;
+            font-size: 22px;
+            letter-spacing: 2px;
+            color: #00e5ff;
         }
 
-        .scorpio-title { font-size: 12px; color: #ffff00; font-weight: bold; margin-bottom: 2px; }
-
-        .scorpio-badge { 
-            border: 1.5px solid #ffff00; 
-            border-radius: 10px; 
-            padding: 1px 10px; 
-            display: inline-block;
-            animation: badge-rainbow 3s linear infinite;
-        }
-
-        @keyframes badge-rainbow {
-            0% { color: red; border-color: red; }
-            25% { color: yellow; border-color: yellow; }
-            50% { color: lime; border-color: lime; }
-            75% { color: cyan; border-color: cyan; }
-            100% { color: red; border-color: red; }
-        }
-
-        .name-banner { 
-            background: #ff0000; 
-            color: white; 
-            font-size: 20px; 
-            font-weight: bold; 
-            padding: 2px 25px; 
-            border-radius: 30px; 
-            display: inline-block; 
-            margin: 4px 0; 
-            box-shadow: 0 0 8px #ff0000; 
-            text-transform: uppercase;
-        }
-
-        .nice-time-text { font-size: 12px; color: #ffff00; margin-top: 2px; font-weight: bold; }
-        .names-list { font-size: 20px; color: white; font-weight: bold; text-shadow: 0 0 8px #00f2ff; }
+        .designer-credit span { color: white; font-weight: bold; }
     </style>
     
     <script>
@@ -127,21 +99,18 @@
         <span id="clock"></span>
     </div>
 
+    <!-- Your Center Logo -->
     <img src="logo.png" class="scorpio-logo">
 
     <div class="menu-container">
+        <!-- Linking to your local folders for safety -->
         <a href="hen/index.html" class="scorpio-btn">PS4 Jailbreak (9.00)</a>
         <a href="ps5/index.html" class="scorpio-btn">PS5 Exploit</a>
         <a href="ps3/index.html" class="scorpio-btn">PS3 Tools</a>
     </div>
 
-    <div class="scorpio-card">
-        <div class="scorpio-title">
-            Designed, Compiled by : <span class="scorpio-badge">Scorpio</span>
-        </div>
-        <div class="name-banner">Ahmed ESSAM</div>
-        <div class="nice-time-text">Have A Nice Time :</div>
-        <div class="names-list">Dareen & Omar & jojo</div>
+    <div class="designer-credit">
+        Designed and Compiled By <span>Ahmed Essam</span>
     </div>
 </body>
 </html>
