@@ -60,39 +60,56 @@
             transform: scale(1.05);
         }
 
-        /* --- THE NEW SCORPIO IDENTITY CARD --- */
+        /* --- THE REFINED SCORPIO IDENTITY CARD --- */
         .scorpio-card {
             position: absolute;
-            bottom: 30px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.85); /* Dark background like image */
-            border: 3px solid #00f2ff; /* Glowing cyan border */
-            border-radius: 25px;
-            padding: 15px 50px;
-            box-shadow: 0 0 20px #00f2ff, inset 0 0 10px #00f2ff;
+            background: rgba(0, 0, 0, 0.85); 
+            border: 2px solid #00f2ff; 
+            border-radius: 20px;
+            padding: 10px 40px;
+            box-shadow: 0 0 15px #00f2ff, inset 0 0 8px #00f2ff;
             text-align: center;
-            min-width: 550px;
+            min-width: 480px;
         }
 
-        .scorpio-title { font-size: 16px; color: #ffff00; font-weight: bold; margin-bottom: 5px; }
-        .scorpio-badge { border: 2px solid #ffff00; border-radius: 15px; padding: 2px 12px; display: inline-block; }
-        
+        .scorpio-title { font-size: 14px; color: #ffff00; font-weight: bold; margin-bottom: 2px; }
+
+        /* SIMULTANEOUS RAINBOW BADGE ANIMATION */
+        .scorpio-badge { 
+            border: 2px solid #ffff00; 
+            border-radius: 12px; 
+            padding: 1px 12px; 
+            display: inline-block;
+            animation: badge-rainbow 3s linear infinite;
+        }
+
+        @keyframes badge-rainbow {
+            0% { color: red; border-color: red; }
+            20% { color: yellow; border-color: yellow; }
+            40% { color: lime; border-color: lime; }
+            60% { color: cyan; border-color: cyan; }
+            80% { color: magenta; border-color: magenta; }
+            100% { color: red; border-color: red; }
+        }
+
         .name-banner { 
             background: #ff0000; 
             color: white; 
-            font-size: 28px; 
+            font-size: 26px; 
             font-weight: bold; 
-            padding: 5px 40px; 
-            border-radius: 50px; 
+            padding: 4px 35px; 
+            border-radius: 40px; 
             display: inline-block; 
-            margin: 8px 0; 
-            box-shadow: 0 0 15px #ff0000; 
+            margin: 6px 0; 
+            box-shadow: 0 0 12px #ff0000; 
             text-transform: uppercase;
         }
 
-        .nice-time-text { font-size: 16px; color: #ffff00; margin-top: 5px; font-weight: bold; }
-        .names-list { font-size: 28px; color: white; font-weight: bold; text-shadow: 0 0 10px #00f2ff; }
+        .nice-time-text { font-size: 14px; color: #ffff00; margin-top: 3px; font-weight: bold; }
+        .names-list { font-size: 26px; color: white; font-weight: bold; text-shadow: 0 0 10px #00f2ff; }
     </style>
     
     <script>
@@ -119,7 +136,7 @@
         <a href="ps3/index.html" class="scorpio-btn">PS3 Tools</a>
     </div>
 
-    <!-- THE NEW SCORPIO CARD -->
+    <!-- THE REFINED SCORPIO HUD CARD -->
     <div class="scorpio-card">
         <div class="scorpio-title">
             Designed, Compiled by : <span class="scorpio-badge">Scorpio</span>
