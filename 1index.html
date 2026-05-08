@@ -13,7 +13,6 @@
             font-family: 'Segoe UI', Tahoma, sans-serif;
         }
 
-        /* Top Bar for Clock and Date */
         .top-bar {
             padding: 15px;
             display: flex;
@@ -23,14 +22,12 @@
             text-shadow: 0px 0px 10px rgba(0, 229, 255, 0.5);
         }
 
-        /* Your Logo Branding */
         .scorpio-logo {
             width: 300px;
             margin-top: 20px;
             filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8));
         }
 
-        /* Button Container */
         .menu-container {
             margin-top: 50px;
             display: flex;
@@ -39,7 +36,6 @@
             flex-wrap: wrap;
         }
 
-        /* The Frost Glowing Button */
         .scorpio-btn {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(12px);
@@ -64,7 +60,7 @@
             transform: scale(1.05);
         }
 
-        /* Designer Credit Rectangle */
+        /* Stable Designer Credit Rectangle */
         .designer-credit {
             position: absolute;
             bottom: 30px;
@@ -72,12 +68,15 @@
             transform: translateX(-50%);
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 229, 255, 0.4);
             padding: 10px 40px;
             border-radius: 4px;
-            font-size: 14px;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+            font-size: 22px; /* Set to your stable size */
             letter-spacing: 2px;
             color: #00e5ff;
+            white-space: nowrap;
         }
 
         .designer-credit span { color: white; font-weight: bold; }
@@ -99,11 +98,9 @@
         <span id="clock"></span>
     </div>
 
-    <!-- Your Center Logo -->
     <img src="logo.png" class="scorpio-logo">
 
     <div class="menu-container">
-        <!-- Linking to your local folders for safety -->
         <a href="hen/index.html" class="scorpio-btn">PS4 Jailbreak (9.00)</a>
         <a href="ps5/index.html" class="scorpio-btn">PS5 Exploit</a>
         <a href="ps3/index.html" class="scorpio-btn">PS3 Tools</a>
