@@ -1,10 +1,12 @@
 <html>
 <head>
-    <title>The Scorpio Host - Ahmed Essam</title>
+    <title>Scorpio Project - Firmware Selector</title>
     <style>
         html, body {
+            /* Since images are IN the hen folder, use the filenames directly */
             background: url('img.jpg') no-repeat center center fixed; 
             background-size: cover;
+            background-color: #24272b;
             color: white;
             text-align: center;
             margin: 0;
@@ -13,29 +15,43 @@
             font-family: 'Segoe UI', Tahoma, sans-serif;
         }
 
-        /* Container to keep logo and text together during success */
-        .exploit-container {
-            margin-top: 50px;
+        .scorpio-logo {
+            width: 250px;
+            margin-top: 40px;
+            filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8));
         }
 
         #msgs {
-            font-size: 32px;
-            font-weight: bold;
-            color: #e0faff;
-            text-shadow: 0 0 15px rgba(0, 229, 255, 0.8);
+            font-size: 24px;
+            color: #00e5ff;
             margin-top: 20px;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
         }
 
-        .loader {
-            margin: 20px auto;
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(255, 255, 255, 0.1);
-            border-top: 3px solid #00e5ff;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+        .menu-container {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        .scorpio-btn {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 229, 255, 0.4);
+            color: #e0faff;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+            transition: 0.3s;
+            display: inline-block;
+        }
 
         /* --- THE REFINED COMPACT IDENTITY CARD --- */
         .scorpio-card {
@@ -58,25 +74,18 @@
         .nice-time-text { font-size: 12px; color: #ffff00; margin-top: 2px; font-weight: bold; }
         .names-list { font-size: 20px; color: white; font-weight: bold; text-shadow: 0 0 8px #00f2ff; }
 
-        #console { display: none; }
     </style>
-
-    <script>
-        if (window.applicationCache.status=='0'){window.location.replace("cache.html");}
-    </script>
-    <script src="payload.js"></script>
-    <script type='module' src='./alert.mjs'></script>
 </head>
 <body>
-    <pre id='console'></pre>
 
-    <div class="exploit-container">
-        <!-- Logo stays here so WOLF script doesn't delete it -->
-        <img src="../../logo.png" style="width: 220px; filter: drop-shadow(0 0 10px #00e5ff); mix-blend-mode: screen;">
-        
-        <h1 id="msgs">Jailbreaking <span style="color:#fc0404;">( Please wait ) ....</span></h1>
-        
-        <div class="loader"></div>
+    <!-- Fixed Image Path: looking in current 'hen' folder -->
+    <img src="logo.png" class="scorpio-logo">
+    <div id="msgs">Select Firmware Version</div>
+
+    <div class="menu-container">
+        <a href="505/index.html" class="scorpio-btn">FW 5.05</a>
+        <a href="672/index.html" class="scorpio-btn">FW 6.72</a>
+        <a href="900/index.html" class="scorpio-btn">FW 9.00</a>
     </div>
 
     <!-- THE COMPACT SCORPIO HUD CARD -->
@@ -86,5 +95,6 @@
         <div class="nice-time-text">Have A Nice Time :</div>
         <div class="names-list">Dareen & Omar & jojo</div>
     </div>
+
 </body>
 </html>
