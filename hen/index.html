@@ -28,7 +28,6 @@
             padding: 0 50px;
         }
 
-        /* Scorpio Frost Button */
         .scorpio-btn {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(12px);
@@ -54,7 +53,6 @@
             transform: scale(1.05);
         }
 
-        /* Status Message */
         #msgs {
             font-size: 26px;
             color: #00e5ff;
@@ -63,7 +61,7 @@
             text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
         }
 
-        /* Designer Credit Box */
+        /* Stable Designer Credit Rectangle */
         .designer-credit {
             position: absolute;
             bottom: 25px;
@@ -71,12 +69,14 @@
             transform: translateX(-50%);
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 229, 255, 0.4);
             padding: 10px 40px;
             border-radius: 4px;
-            font-size: 14px;
+            font-size: 22px; /* Restored to stable size */
             letter-spacing: 2px;
             color: #00e5ff;
+            white-space: nowrap;
         }
         .designer-credit span { color: white; font-weight: bold; }
     </style>
@@ -87,15 +87,12 @@
     <div id="msgs">Select PS4 Firmware</div>
 
     <div class="menu-container">
-        <!-- Main Firmware Links -->
         <a href="505/index.html" class="scorpio-btn" onmouseover="msgs.innerHTML='PS4 Version 5.05'">FW 5.05</a>
         <a href="672/index.html" class="scorpio-btn" onmouseover="msgs.innerHTML='PS4 Version 6.72'">FW 6.72</a>
         <a href="702/index.html" class="scorpio-btn" onmouseover="msgs.innerHTML='PS4 Version 7.02'">FW 7.02</a>
         <a href="755/index.html" class="scorpio-btn" onmouseover="msgs.innerHTML='PS4 Version 7.55'">FW 7.55</a>
         <a href="900/index.html" class="scorpio-btn" onmouseover="msgs.innerHTML='PS4 Version 9.00 (PSFree No USB)'">FW 9.00</a>
-        
-        <!-- Utility Links -->
-        <a href="restore/index.html" class="scorpio-btn" style="border-color: #ffcc00; color: #ffcc00;" onmouseover="msgs.innerHTML='Restore User Guide (USB Required)'">Restore Menu</a>
+        <a href="restore/index.html" class="scorpio-btn" style="border-color: #ffcc00; color: #ffcc00;" onmouseover="msgs.innerHTML='Restore User Guide'">Restore</a>
     </div>
 
     <div class="designer-credit">
