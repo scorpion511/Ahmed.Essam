@@ -13,19 +13,14 @@
             font-family: 'Segoe UI', Tahoma, sans-serif;
         }
 
-        /* Black Red Fire Effect Title */
         .fire-title {
             font-size: 50px;
             font-weight: bold;
             text-transform: uppercase;
-            color: #000; /* Black core */
+            color: #000;
             margin-top: 20px;
             letter-spacing: 5px;
-            text-shadow: 
-                0 0 5px #ff0000, 
-                0 -5px 10px #ff0000, 
-                2px -10px 15px #ff4b2b, 
-                -2px -20px 20px #ff4b2b;
+            text-shadow: 0 0 5px #ff0000, 0 -5px 10px #ff0000, 2px -10px 15px #ff4b2b, -2px -20px 20px #ff4b2b;
             animation: flicker 1.5s infinite alternate;
         }
         @keyframes flicker {
@@ -77,25 +72,61 @@
             text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
         }
 
-        /* --- THE SCORPIO IDENTITY CARD --- */
+        /* --- REFINED SCORPIO IDENTITY CARD --- */
         .scorpio-card {
             position: absolute;
-            bottom: 30px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             background: rgba(0, 0, 0, 0.85);
-            border: 3px solid #00f2ff;
-            border-radius: 25px;
-            padding: 15px 50px;
-            box-shadow: 0 0 20px #00f2ff, inset 0 0 10px #00f2ff;
+            border: 2px solid #00f2ff;
+            border-radius: 20px;
+            padding: 10px 40px;
+            box-shadow: 0 0 15px #00f2ff, inset 0 0 8px #00f2ff;
             text-align: center;
-            min-width: 550px;
+            min-width: 480px;
         }
-        .scorpio-title { font-size: 16px; color: #ffff00; font-weight: bold; margin-bottom: 5px; }
-        .scorpio-badge { border: 2px solid #ffff00; border-radius: 15px; padding: 2px 12px; display: inline-block; }
-        .name-banner { background: #ff0000; color: white; font-size: 28px; font-weight: bold; padding: 5px 40px; border-radius: 50px; display: inline-block; margin: 8px 0; box-shadow: 0 0 15px #ff0000; text-transform: uppercase; }
-        .nice-time-text { font-size: 16px; color: #ffff00; margin-top: 5px; font-weight: bold; }
-        .names-list { font-size: 28px; color: white; font-weight: bold; text-shadow: 0 0 10px #00f2ff; }
+
+        .scorpio-title { font-size: 14px; color: #ffff00; font-weight: bold; margin-bottom: 2px; }
+
+        .scorpio-badge { 
+            border: 2px solid #ffff00; 
+            border-radius: 12px; 
+            padding: 1px 12px; 
+            display: inline-block;
+            animation: badge-rainbow 3s linear infinite;
+        }
+
+        @keyframes badge-rainbow {
+            0% { color: red; border-color: red; }
+            20% { color: yellow; border-color: yellow; }
+            40% { color: lime; border-color: lime; }
+            60% { color: cyan; border-color: cyan; }
+            80% { color: magenta; border-color: magenta; }
+            100% { color: red; border-color: red; }
+        }
+
+        .name-banner { 
+            background: #ff0000; 
+            color: white; 
+            font-size: 26px; 
+            font-weight: bold; 
+            padding: 4px 35px; 
+            border-radius: 40px; 
+            display: inline-block; 
+            margin: 6px 0; 
+            box-shadow: 0 0 12px #ff0000; 
+            text-transform: uppercase; 
+        }
+
+        .nice-time-text { font-size: 14px; color: #ffff00; margin-top: 3px; font-weight: bold; }
+
+        .names-list { 
+            font-size: 26px; 
+            color: white; 
+            font-weight: bold; 
+            text-shadow: 0 0 10px #00f2ff; 
+        }
 
     </style>
 
@@ -131,10 +162,9 @@
         <span id="clock"></span>
     </div>
 
-    <!-- NEW FIRE TITLE -->
     <div class="fire-title">WELCOME TO SCORPION HACK</div>
     
-    <img src="logo.png" style="width:180px; margin: 10px auto;">
+    <img src="logo.png" style="width:160px; margin: 10px auto;">
     
     <div id="msgs">Select a Category</div>
 
@@ -147,32 +177,29 @@
         <button class="scorpio-btn" onclick="alltrainer()">Trainers</button>
     </div>
 
+    <!-- Sub-menus remain the same... -->
     <div id="host505" style="display:none">
         <a href="505/index.html" class="scorpio-btn">Load 5.05</a>
         <a href="restore/505/index.html" class="scorpio-btn">Restore (No USB)</a>
         <br><button class="scorpio-btn back" onclick="backall()">Back</button>
     </div>
-
     <div id="host672" style="display:none">
         <a href="672/index.html" class="scorpio-btn">Load 6.72</a>
         <a href="restore/672/index.html" class="scorpio-btn">Restore (No USB)</a>
         <br><button class="scorpio-btn back" onclick="backall()">Back</button>
     </div>
-
     <div id="host900c" style="display:none">
         <a href="900n/index.html" class="scorpio-btn">9.00 Auto</a>
         <a href="900c/index.html" class="scorpio-btn">9.00 Manual</a>
         <a href="restore/900/index.html" class="scorpio-btn">9.00 Restore</a>
         <br><button class="scorpio-btn back" onclick="backall()">Back</button>
     </div>
-
     <div id="goldhen" style="display:none">
         <a href="hen/505/index.html" class="scorpio-btn">GoldHEN 5.05</a>
         <a href="hen/672/index.html" class="scorpio-btn">GoldHEN 6.72</a>
         <a href="hen/900/index.html" class="scorpio-btn">GoldHEN 9.00</a>
         <br><button class="scorpio-btn back" onclick="backall()">Back</button>
     </div>
-
     <div id="trainer" style="display:none">
         <a href="trainer/index505.html" class="scorpio-btn">Trainer 5.05</a>
         <a href="trainer/index672.html" class="scorpio-btn">Trainer 6.72</a>
@@ -180,7 +207,7 @@
         <br><button class="scorpio-btn back" onclick="backall()">Back</button>
     </div>
 
-    <!-- THE SCORPIO CARD -->
+    <!-- THE REFINED SCORPIO HUD CARD -->
     <div class="scorpio-card">
         <div class="scorpio-title">Designed, Compiled by : <span class="scorpio-badge">Scorpio</span></div>
         <div class="name-banner">Ahmed ESSAM</div>
