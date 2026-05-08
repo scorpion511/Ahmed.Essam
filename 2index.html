@@ -14,11 +14,11 @@
         }
 
         .fire-title {
-            font-size: 50px;
+            font-size: 45px; /* Shrunk slightly to lift everything up */
             font-weight: bold;
             text-transform: uppercase;
             color: #000;
-            margin-top: 20px;
+            margin-top: 15px;
             letter-spacing: 5px;
             text-shadow: 0 0 5px #ff0000, 0 -5px 10px #ff0000, 2px -10px 15px #ff4b2b, -2px -20px 20px #ff4b2b;
             animation: flicker 1.5s infinite alternate;
@@ -29,10 +29,10 @@
         }
 
         .top-bar {
-            padding: 15px;
+            padding: 10px;
             display: flex;
             justify-content: space-between;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             text-shadow: 0px 0px 10px rgba(0, 229, 255, 0.5);
         }
@@ -43,9 +43,9 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(0, 229, 255, 0.4);
             color: #e0faff;
-            padding: 15px 30px;
-            margin: 10px;
-            font-size: 18px;
+            padding: 12px 25px; /* Smaller padding */
+            margin: 8px;
+            font-size: 16px;
             border-radius: 6px;
             cursor: pointer;
             display: inline-block;
@@ -65,34 +65,35 @@
         .scorpio-btn.back { border-color: #ff4b2b; color: #ff4b2b; }
 
         #msgs {
-            font-size: 28px;
+            font-size: 24px;
             color: #00e5ff;
-            margin-top: 10px;
-            height: 40px;
+            margin-top: 5px;
+            height: 35px;
             text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
         }
 
-        /* --- REFINED SCORPIO IDENTITY CARD --- */
+        /* --- COMPACT SCORPIO IDENTITY CARD --- */
         .scorpio-card {
             position: absolute;
-            bottom: 20px;
+            bottom: 5px; /* Absolute bottom */
             left: 50%;
             transform: translateX(-50%);
             background: rgba(0, 0, 0, 0.85);
-            border: 2px solid #00f2ff;
-            border-radius: 20px;
-            padding: 10px 40px;
-            box-shadow: 0 0 15px #00f2ff, inset 0 0 8px #00f2ff;
+            border: 1.5px solid #00f2ff;
+            border-radius: 15px;
+            padding: 5px 25px;
+            box-shadow: 0 0 10px #00f2ff, inset 0 0 5px #00f2ff;
             text-align: center;
-            min-width: 480px;
+            min-width: 380px;
+            z-index: 100;
         }
 
-        .scorpio-title { font-size: 14px; color: #ffff00; font-weight: bold; margin-bottom: 2px; }
+        .scorpio-title { font-size: 12px; color: #ffff00; font-weight: bold; margin-bottom: 2px; }
 
         .scorpio-badge { 
-            border: 2px solid #ffff00; 
-            border-radius: 12px; 
-            padding: 1px 12px; 
+            border: 1.5px solid #ffff00; 
+            border-radius: 10px; 
+            padding: 1px 10px; 
             display: inline-block;
             animation: badge-rainbow 3s linear infinite;
         }
@@ -109,23 +110,23 @@
         .name-banner { 
             background: #ff0000; 
             color: white; 
-            font-size: 26px; 
+            font-size: 20px; 
             font-weight: bold; 
-            padding: 4px 35px; 
-            border-radius: 40px; 
+            padding: 2px 25px; 
+            border-radius: 30px; 
             display: inline-block; 
-            margin: 6px 0; 
-            box-shadow: 0 0 12px #ff0000; 
+            margin: 4px 0; 
+            box-shadow: 0 0 8px #ff0000; 
             text-transform: uppercase; 
         }
 
-        .nice-time-text { font-size: 14px; color: #ffff00; margin-top: 3px; font-weight: bold; }
+        .nice-time-text { font-size: 12px; color: #ffff00; margin-top: 2px; font-weight: bold; }
 
         .names-list { 
-            font-size: 26px; 
+            font-size: 20px; 
             color: white; 
             font-weight: bold; 
-            text-shadow: 0 0 10px #00f2ff; 
+            text-shadow: 0 0 8px #00f2ff; 
         }
 
     </style>
@@ -164,7 +165,7 @@
 
     <div class="fire-title">WELCOME TO SCORPION HACK</div>
     
-    <img src="logo.png" style="width:160px; margin: 10px auto;">
+    <img src="logo.png" style="width:140px; margin: 5px auto;">
     
     <div id="msgs">Select a Category</div>
 
@@ -177,37 +178,35 @@
         <button class="scorpio-btn" onclick="alltrainer()">Trainers</button>
     </div>
 
-    <!-- Sub-menus remain the same... -->
     <div id="host505" style="display:none">
         <a href="505/index.html" class="scorpio-btn">Load 5.05</a>
-        <a href="restore/505/index.html" class="scorpio-btn">Restore (No USB)</a>
+        <a href="restore/505/index.html" class="scorpio-btn">Restore</a>
         <br><button class="scorpio-btn back" onclick="backall()">Back</button>
     </div>
     <div id="host672" style="display:none">
         <a href="672/index.html" class="scorpio-btn">Load 6.72</a>
-        <a href="restore/672/index.html" class="scorpio-btn">Restore (No USB)</a>
+        <a href="restore/672/index.html" class="scorpio-btn">Restore</a>
         <br><button class="scorpio-btn back" onclick="backall()">Back</button>
     </div>
     <div id="host900c" style="display:none">
         <a href="900n/index.html" class="scorpio-btn">9.00 Auto</a>
         <a href="900c/index.html" class="scorpio-btn">9.00 Manual</a>
-        <a href="restore/900/index.html" class="scorpio-btn">9.00 Restore</a>
+        <a href="restore/900/index.html" class="scorpio-btn">Restore</a>
         <br><button class="scorpio-btn back" onclick="backall()">Back</button>
     </div>
     <div id="goldhen" style="display:none">
-        <a href="hen/505/index.html" class="scorpio-btn">GoldHEN 5.05</a>
-        <a href="hen/672/index.html" class="scorpio-btn">GoldHEN 6.72</a>
-        <a href="hen/900/index.html" class="scorpio-btn">GoldHEN 9.00</a>
+        <a href="hen/505/index.html" class="scorpio-btn">HEN 5.05</a>
+        <a href="hen/672/index.html" class="scorpio-btn">HEN 6.72</a>
+        <a href="hen/900/index.html" class="scorpio-btn">HEN 9.00</a>
         <br><button class="scorpio-btn back" onclick="backall()">Back</button>
     </div>
     <div id="trainer" style="display:none">
-        <a href="trainer/index505.html" class="scorpio-btn">Trainer 5.05</a>
-        <a href="trainer/index672.html" class="scorpio-btn">Trainer 6.72</a>
-        <a href="trainer/index900.html" class="scorpio-btn">Trainer 9.00</a>
+        <a href="trainer/index505.html" class="scorpio-btn">T 5.05</a>
+        <a href="trainer/index672.html" class="scorpio-btn">T 6.72</a>
+        <a href="trainer/index900.html" class="scorpio-btn">T 9.00</a>
         <br><button class="scorpio-btn back" onclick="backall()">Back</button>
     </div>
 
-    <!-- THE REFINED SCORPIO HUD CARD -->
     <div class="scorpio-card">
         <div class="scorpio-title">Designed, Compiled by : <span class="scorpio-badge">Scorpio</span></div>
         <div class="name-banner">Ahmed ESSAM</div>
