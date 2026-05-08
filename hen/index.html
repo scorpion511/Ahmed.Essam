@@ -1,12 +1,10 @@
 <html>
 <head>
-    <title>Scorpio Project - Firmware Selector</title>
+    <title>Scorpio Project - Firmware Bridge</title>
     <style>
         html, body {
-            /* DIRECT PATH: looking in the same 'hen' folder */
-            background: url('img.jpg') no-repeat center center fixed; 
+            background: url('../img.jpg') no-repeat center center fixed; 
             background-size: cover;
-            background-color: #24272b;
             color: white;
             text-align: center;
             margin: 0;
@@ -16,79 +14,92 @@
         }
 
         .scorpio-logo {
-            width: 250px;
-            margin-top: 30px;
+            width: 280px;
+            margin-top: 40px;
             filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8));
-        }
-
-        #msgs {
-            font-size: 24px;
-            color: #00e5ff;
-            margin-top: 15px;
-            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
         }
 
         .menu-container {
             margin-top: 30px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 0 50px;
         }
 
+        /* Scorpio Frost Button */
         .scorpio-btn {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(0, 229, 255, 0.4);
             color: #e0faff;
-            padding: 15px 30px;
+            padding: 15px 25px;
             font-size: 18px;
-            border-radius: 6px;
+            border-radius: 4px;
+            cursor: pointer;
             text-decoration: none;
             text-transform: uppercase;
+            letter-spacing: 1px;
             box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
             transition: 0.3s;
+            display: inline-block;
         }
 
-        /* COMPACT HUD CARD */
-        .scorpio-card {
+        .scorpio-btn:hover {
+            background: rgba(0, 229, 255, 0.1);
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.8);
+            border: 1px solid rgba(0, 229, 255, 1);
+            transform: scale(1.05);
+        }
+
+        /* Status Message */
+        #msgs {
+            font-size: 26px;
+            color: #00e5ff;
+            margin-top: 20px;
+            height: 40px;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        }
+
+        /* Designer Credit Box */
+        .designer-credit {
             position: absolute;
-            bottom: 5px;
+            bottom: 25px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.85);
-            border: 1.5px solid #00f2ff;
-            border-radius: 15px;
-            padding: 5px 25px;
-            box-shadow: 0 0 10px #00f2ff, inset 0 0 5px #00f2ff;
-            text-align: center;
-            min-width: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 229, 255, 0.4);
+            padding: 10px 40px;
+            border-radius: 4px;
+            font-size: 22px;
+            letter-spacing: 2px;
+            color: #00e5ff;
         }
-        .scorpio-title { font-size: 12px; color: #ffff00; font-weight: bold; margin-bottom: 2px; }
-        .scorpio-badge { border: 1.5px solid #ffff00; border-radius: 10px; padding: 1px 10px; display: inline-block; animation: badge-rainbow 3s linear infinite; }
-        @keyframes badge-rainbow { 0% { color: red; border-color: red; } 25% { color: yellow; border-color: yellow; } 50% { color: lime; border-color: lime; } 75% { color: cyan; border-color: cyan; } 100% { color: red; border-color: red; } }
-        .name-banner { background: #ff0000; color: white; font-size: 20px; font-weight: bold; padding: 2px 25px; border-radius: 30px; display: inline-block; margin: 4px 0; box-shadow: 0 0 8px #ff0000; text-transform: uppercase; }
-        .nice-time-text { font-size: 12px; color: #ffff00; margin-top: 2px; font-weight: bold; }
-        .names-list { font-size: 20px; color: white; font-weight: bold; text-shadow: 0 0 8px #00f2ff; }
+        .designer-credit span { color: white; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <!-- DIRECT PATH: looking in the same 'hen' folder -->
-    <img src="logo.png" class="scorpio-logo">
-    
-    <div id="msgs">Select Firmware Version</div>
+    <img src="../logo.png" class="scorpio-logo">
+    <div id="msgs">Select PS4 Firmware</div>
 
     <div class="menu-container">
-        <a href="505/index.html" class="scorpio-btn">FW 5.05</a>
-        <a href="672/index.html" class="scorpio-btn">FW 6.72</a>
-        <a href="900/index.html" class="scorpio-btn">FW 9.00</a>
+        <!-- Main Firmware Links -->
+        <a href="505/index.html" class="scorpio-btn" onmouseover="msgs.innerHTML='PS4 Version 5.05'">FW 5.05</a>
+        <a href="672/index.html" class="scorpio-btn" onmouseover="msgs.innerHTML='PS4 Version 6.72'">FW 6.72</a>
+        <a href="702/index.html" class="scorpio-btn" onmouseover="msgs.innerHTML='PS4 Version 7.02'">FW 7.02</a>
+        <a href="755/index.html" class="scorpio-btn" onmouseover="msgs.innerHTML='PS4 Version 7.55'">FW 7.55</a>
+        <a href="900/index.html" class="scorpio-btn" onmouseover="msgs.innerHTML='PS4 Version 9.00 (PSFree No USB)'">FW 9.00</a>
+        
+        <!-- Utility Links -->
+        <a href="restore/index.html" class="scorpio-btn" style="border-color: #ffcc00; color: #ffcc00;" onmouseover="msgs.innerHTML='Restore User Guide (USB Required)'">Restore Menu</a>
     </div>
 
-    <div class="scorpio-card">
-        <div class="scorpio-title">Designed, Compiled by : <span class="scorpio-badge">Scorpio</span></div>
-        <div class="name-banner">Ahmed ESSAM</div>
-        <div class="nice-time-text">Have A Nice Time :</div>
-        <div class="names-list">Dareen & Omar & jojo</div>
+    <div class="designer-credit">
+        Designed and Compiled By <span>Ahmed Essam</span>
     </div>
 
 </body>
