@@ -14,9 +14,40 @@
             height: 100vh;
         }
 
+        /* CONTAINER WRAPPER FOR THE OUTER SPINNING PERIMETER FIRE TRACER */
+        .logo-wrapper {
+            width: 288px;               /* Sized to perfectly frame the 280px logo */
+            height: 288px;
+            margin: 35px auto 0 auto;   /* Replaces the logo's native top margin positioning */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 14px;
+            overflow: hidden;           /* Restricts the running fire trail to the border edge channel */
+            box-shadow: 0 0 25px 5px rgba(255, 55, 0, 0.6);
+        }
+
+        /* CONIC FIRE MATRIX (ROTATES BEHIND THE IMAGE AS A BACKGROUND TRACER) */
+        .logo-wrapper::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: conic-gradient(#ff0000, #ff7700, #ffea00, #ff3700, #ff0000);
+            animation: rotateFire 3s linear infinite;
+        }
+
+        /* ORIGINAL UNTOUCHED LOGO DIMENSIONS AND STYLES WITH ROUNDED EDGES */
         .scorpio-logo {
             width: 280px;
-            margin-top: 35px;
+            height: 280px;
+            object-fit: cover;
+            margin-top: 0px;            /* Reset to 0 since positioning is now handled by wrapper margin */
+            border-radius: 12px;
+            position: relative;
+            z-index: 2;                 /* Forces the logo box over the rotating light layer */
+            background: #000;
             filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8));
         }
 
@@ -141,6 +172,11 @@
             margin-top: 3px;
         }
 
+        /* ROTATION KEYFRAMES TO MAKE THE BORDER LIGHTSTREAM MOVE UNTOUCHED */
+        @keyframes rotateFire {
+            100% { transform: rotate(360deg); }
+        }
+
         @keyframes rainbowShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -153,7 +189,6 @@
             100% { background-position: 0% 50%; filter: drop-shadow(0 0 2px rgba(0,255,204,0.3)); opacity: 0.8; }
         }
 
-        /* Dynamic Magma/Fire text movement keyframes */
         @keyframes darkFireFlow {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -163,7 +198,11 @@
 </head>
 <body>
 
-    <img src="../logo.png" class="scorpio-logo">
+    <!-- Outer running fire tracer channel box container element -->
+    <div class="logo-wrapper">
+        <img src="../logo.png" class="scorpio-logo">
+    </div>
+    
     <div id="msgs">Select PS4 Firmware</div>
 
     <div class="menu-container">
