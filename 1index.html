@@ -34,6 +34,7 @@
             justify-content: center;
             gap: 25px;
             flex-wrap: wrap;
+            align-items: center; /* Ensures the larger button stays vertically centered */
         }
 
         .scorpio-btn {
@@ -60,26 +61,100 @@
             transform: scale(1.05);
         }
 
-        /* Stable Designer Credit Rectangle */
-        .designer-credit {
+        /* Compact Scorpio Designer Credit Container Box */
+        .designer-credit-box {
             position: absolute;
-            bottom: 30px;
+            bottom: 12px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.75);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 229, 255, 0.4);
-            padding: 10px 40px;
-            border-radius: 4px;
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
-            font-size: 22px; /* Set to your stable size */
-            letter-spacing: 2px;
-            color: #00e5ff;
-            white-space: nowrap;
+            border: 2px solid #00e5ff;
+            border-radius: 14px;
+            padding: 4px 25px;
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.7), inset 0 0 15px rgba(0, 229, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            min-width: 300px;
         }
 
-        .designer-credit span { color: white; font-weight: bold; }
+        .credit-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: bold;
+            color: #ffff00;
+        }
+
+        .rainbow-badge {
+            border: 1.5px solid #55ff00;
+            border-radius: 12px;
+            padding: 1px 12px;
+            font-weight: bold;
+            font-size: 13px;
+            background: transparent;
+            background-image: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbowShift 8s linear infinite;
+        }
+
+        /* Ahmed ESSAM Dark Fire & Golden Magma Neon Pill */
+        .name-pill {
+            background: #120000;
+            border: 1.5px solid #ff3700;
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 45px;
+            border-radius: 25px;
+            box-shadow: 0 0 20px 4px rgba(255, 43, 0, 0.75), inset 0 0 10px rgba(0,0,0,0.9);
+            margin: 2px 0;
+            display: inline-block;
+            background: linear-gradient(45deg, #ff2a00, #ff8800, #ffea00, #ff8800, #ff2a00);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: darkFireFlow 3s ease infinite;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
+        }
+
+        .welcome-text {
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            background: linear-gradient(45deg, #00ffcc, #00e5ff, #ffffff, #00e5ff, #00ffcc);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlowFade 4s ease infinite;
+            text-align: center;
+            margin-top: 1px;
+        }
+
+        @keyframes rainbowShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes textGlowFade {
+            0% { background-position: 0% 50%; filter: drop-shadow(0 0 2px rgba(0,255,204,0.3)); opacity: 0.8; }
+            50% { background-position: 100% 50%; filter: drop-shadow(0 0 12px rgba(0,229,255,0.9)); opacity: 1; }
+            100% { background-position: 0% 50%; filter: drop-shadow(0 0 2px rgba(0,255,204,0.3)); opacity: 0.8; }
+        }
+
+        @keyframes darkFireFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
     </style>
     
     <script>
@@ -101,13 +176,35 @@
     <img src="logo.png" class="scorpio-logo">
 
     <div class="menu-container">
-        <a href="hen/index.html" class="scorpio-btn">PS4 Jailbreak (9.00)</a>
+        <!-- Specialized PS4 Jailbreak Core Button (Plasma Cyan Pulse Edition) -->
+        <a href="hen/index.html" class="scorpio-btn" style="
+            background: radial-gradient(circle, rgba(0,229,255,0.3) 0%, rgba(0,0,0,0.6) 100%) !important;
+            border: 2px solid #00e5ff !important;
+            box-shadow: 0 0 25px 3px rgba(0, 229, 255, 0.75), inset 0 0 10px rgba(0, 229, 255, 0.3) !important;
+            color: #ffffff !important;
+            font-weight: 900 !important;
+            transform: scale(1.08);
+            text-shadow: 0 0 8px #00e5ff !important;
+            letter-spacing: 2.5px;">
+            🔥 PS4 Jailbreak (9.00)
+        </a>
+
+        <!-- Untouched Secondary Menu Buttons -->
         <a href="ps5/index.html" class="scorpio-btn">PS5 Exploit</a>
         <a href="ps3/index.html" class="scorpio-btn">PS3 Tools</a>
     </div>
 
-    <div class="designer-credit">
-        Designed and Compiled By <span>Ahmed Essam</span>
+    <!-- Integrated Scorpiozed Designer Credit Component -->
+    <div class="designer-credit-box">
+        <div class="credit-header">
+            Designed, Compiled by : <span class="rainbow-badge">Scorpio</span>
+        </div>
+        <div class="name-pill">
+            Ahmed ESSAM
+        </div>
+        <div class="welcome-text">
+            Welcome to SCORPION HACK
+        </div>
     </div>
 </body>
 </html>
