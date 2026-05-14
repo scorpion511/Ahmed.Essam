@@ -14,21 +14,23 @@
             height: 100vh;
         }
 
-        /* CONTAINER WRAPPER FOR THE OUTER SPINNING PERIMETER FIRE TRACER */
+        /* 🟢 SHIFTED LOGO TO THE LEFT SIDE AND SCALED FOR MAXIMUM SYSTEM CLEARANCE */
         .logo-wrapper {
-            width: 288px;               /* Sized to perfectly frame the 280px logo */
-            height: 288px;
-            margin: 35px auto 0 auto;   /* Replaces the logo's native top margin positioning */
+            width: 190px;
+            height: 190px;
+            margin-left: 40px;          /* Aligns cleanly with left sidebar boundaries */
+            margin-top: 25px;
+            float: left;                /* Docks container securely to the left corner */
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 14px;
-            overflow: hidden;           /* Restricts the running fire trail to the border edge channel */
+            overflow: hidden;
             box-shadow: 0 0 25px 5px rgba(255, 55, 0, 0.6);
         }
 
-        /* CONIC FIRE MATRIX (ROTATES BEHIND THE IMAGE AS A BACKGROUND TRACER) */
+        /* CONIC FIRE MATRIX */
         .logo-wrapper::before {
             content: '';
             position: absolute;
@@ -38,26 +40,38 @@
             animation: rotateFire 3s linear infinite;
         }
 
-        /* ORIGINAL UNTOUCHED LOGO DIMENSIONS AND STYLES WITH ROUNDED EDGES */
+        /* LOGO GRAPHIC ELEMENTS PRESERVED */
         .scorpio-logo {
-            width: 280px;
-            height: 280px;
+            width: 182px;
+            height: 182px;
             object-fit: cover;
-            margin-top: 0px;            /* Reset to 0 since positioning is now handled by wrapper margin */
+            margin-top: 0px;
             border-radius: 12px;
             position: relative;
-            z-index: 2;                 /* Forces the logo box over the rotating light layer */
+            z-index: 2;
             background: #000;
             filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8));
         }
 
+        /* 🟢 STATUS MESSAGE POSITION ADJUSTMENT FOR LEFT SIDE FLOW */
+        #msgs {
+            clear: both;
+            font-size: 26px;
+            color: #00e5ff;
+            margin-top: 80px;            /* Smooth space offset underneath floating left logo block */
+            height: 40px;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        }
+
+        /* 🟢 BUTTON LAYOUT BUFFER (ADDED INDEPENDENT CLEARANCE FROM FOOTER BLOCKS) */
         .menu-container {
-            margin-top: 25px;
+            margin-top: 20px;
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
             padding: 0 50px;
+            padding-bottom: 150px;       /* Invisible shield wall pushing footer away */
         }
 
         .scorpio-btn {
@@ -85,15 +99,7 @@
             transform: scale(1.05);
         }
 
-        #msgs {
-            font-size: 26px;
-            color: #00e5ff;
-            margin-top: 15px;
-            height: 40px;
-            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
-        }
-
-        /* Adjusted position to guarantee zero touching with menu layout elements */
+        /* Compact Scorpio Designer Credit Container Box */
         .designer-credit-box {
             position: absolute;
             bottom: 20px;
@@ -111,6 +117,7 @@
             align-items: center;
             gap: 8px;
             min-width: 460px;
+            z-index: 10;
         }
 
         .credit-header {
@@ -149,8 +156,6 @@
             box-shadow: 0 0 20px 4px rgba(255, 43, 0, 0.75), inset 0 0 10px rgba(0,0,0,0.9);
             margin: 2px 0;
             display: inline-block;
-            
-            /* Dark Volcanic Fire Text Gradient styling */
             background: linear-gradient(45deg, #ff2a00, #ff8800, #ffea00, #ff8800, #ff2a00);
             background-size: 200% auto;
             -webkit-background-clip: text;
@@ -172,7 +177,6 @@
             margin-top: 3px;
         }
 
-        /* ROTATION KEYFRAMES TO MAKE THE BORDER LIGHTSTREAM MOVE UNTOUCHED */
         @keyframes rotateFire {
             100% { transform: rotate(360deg); }
         }
@@ -198,7 +202,7 @@
 </head>
 <body>
 
-    <!-- Outer running fire tracer channel box container element -->
+    <!-- Re-engineered Left Dockeyed Fireball Matrix Shield Box -->
     <div class="logo-wrapper">
         <img src="../logo.png" class="scorpio-logo">
     </div>
