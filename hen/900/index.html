@@ -46,41 +46,41 @@
         }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        /* Unified Scorpio Designer Credit Container Box */
+        /* Compact Scorpio Designer Credit Container Box */
         .designer-credit-box {
             position: absolute;
-            bottom: 20px;
+            bottom: 12px;                  /* Adjusted slightly lower for maximum clearance */
             left: 50%;
             transform: translateX(-50%);
             background: rgba(0, 0, 0, 0.75);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 4px solid #00e5ff;
-            border-radius: 24px;
-            padding: 15px 50px;
+            border: 2px solid #00e5ff;     /* Slimmer border line */
+            border-radius: 14px;           /* More compact curved corners */
+            padding: 6px 30px;             /* Reduced cell padding to scale box down */
             box-shadow: 0 0 25px rgba(0, 229, 255, 0.7), inset 0 0 15px rgba(0, 229, 255, 0.2);
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px;
-            min-width: 460px;
+            gap: 4px;                      /* Tighter spacing parameters between internal rows */
+            min-width: 320px;              /* Scaled down global component width */
         }
 
         .credit-header {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 15px;
+            gap: 6px;
+            font-size: 13px;               /* Scaled text sizes */
             font-weight: bold;
             color: #ffff00;
         }
 
         .rainbow-badge {
-            border: 2px solid #55ff00;
-            border-radius: 15px;
-            padding: 2px 16px;
+            border: 1.5px solid #55ff00;
+            border-radius: 12px;
+            padding: 1px 12px;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 13px;               /* Scaled text sizes */
             background: transparent;
             background-image: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
             background-size: 400% 400%;
@@ -92,12 +92,12 @@
         /* Ahmed ESSAM Dark Fire & Golden Magma Neon Pill */
         .name-pill {
             background: #120000;
-            border: 2px solid #ff3700;
-            font-size: 25px;
+            border: 1.5px solid #ff3700;
+            font-size: 18px;               /* Reduced font dimensions down from original 25px */
             font-weight: 900;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            padding: 8px 65px;
+            padding: 4px 45px;             /* Reduced horizontal and vertical button padding */
             border-radius: 25px;
             box-shadow: 0 0 20px 4px rgba(255, 43, 0, 0.75), inset 0 0 10px rgba(0,0,0,0.9);
             margin: 2px 0;
@@ -111,7 +111,7 @@
         }
 
         .welcome-text {
-            font-size: 21px;
+            font-size: 16px;               /* Reduced font dimensions down from original 21px */
             font-weight: bold;
             letter-spacing: 1px;
             background: linear-gradient(45deg, #00ffcc, #00e5ff, #ffffff, #00e5ff, #00ffcc);
@@ -120,7 +120,7 @@
             -webkit-text-fill-color: transparent;
             animation: textGlowFade 4s ease infinite;
             text-align: center;
-            margin-top: 3px;
+            margin-top: 1px;
         }
 
         @keyframes rainbowShift {
