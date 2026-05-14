@@ -22,14 +22,46 @@
             text-shadow: 0px 0px 10px rgba(0, 229, 255, 0.5);
         }
 
+        /* CONTAINER WRAPPER FOR THE OUTER SPINNING PERIMETER FIRE TRACER */
+        .logo-wrapper {
+            width: 190px;
+            height: 190px;
+            margin-left: 30px;
+            margin-top: 10px;
+            float: left;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 14px;
+            overflow: hidden; /* Restricts the running light effect to the boundary edge channel */
+            box-shadow: 0 0 25px 5px rgba(255, 55, 0, 0.6);
+        }
+
+        /* CONIC FIRE matrix (ROTATES BEHIND THE IMAGE AS A BACKGROUND TRACER) */
+        .logo-wrapper::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: conic-gradient(#ff0000, #ff7700, #ffea00, #ff3700, #ff0000);
+            animation: rotateFire 3s linear infinite;
+        }
+
+        /* THE ORIGINAL SQUARE LOGO GRAPHIC WITH ROUNDED EDGES */
         .scorpio-logo {
-            width: 300px;
-            margin-top: 20px;
-            filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8));
+            width: 182px;
+            height: 182px;
+            object-fit: cover;
+            border-radius: 12px;
+            position: relative;
+            z-index: 2; /* Ensures the logo covers the center of the spinning light */
+            background: #000;
         }
 
         .menu-container {
-            margin-top: 50px;
+            clear: both;
+            margin-top: 150px; /* Perfectly aligns content row below your new left docked logo */
             display: flex;
             justify-content: center;
             gap: 25px;
@@ -138,6 +170,11 @@
             margin-top: 1px;
         }
 
+        /* ROTATION SPEED AND BEHAVIOR FOR BORDER FIRE RACER MATRIX */
+        @keyframes rotateFire {
+            100% { transform: rotate(360deg); }
+        }
+
         @keyframes rainbowShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -173,7 +210,10 @@
         <span id="clock"></span>
     </div>
 
-    <img src="logo.png" class="scorpio-logo">
+    <!-- Outer running firewall wrapper box container element -->
+    <div class="logo-wrapper">
+        <img src="logo.png" class="scorpio-logo">
+    </div>
 
     <div class="menu-container">
         <!-- Specialized PS4 Jailbreak Core Button (Plasma Cyan Pulse Edition) -->
