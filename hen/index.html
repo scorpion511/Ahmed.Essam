@@ -61,24 +61,93 @@
             text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
         }
 
-        /* Stable Designer Credit Rectangle */
-        .designer-credit {
+        /* Glorious Cyber Container Box from Image */
+        .designer-credit-box {
             position: absolute;
             bottom: 25px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 229, 255, 0.4);
-            padding: 10px 40px;
-            border-radius: 4px;
-            font-size: 22px; /* Restored to stable size */
-            letter-spacing: 2px;
-            color: #00e5ff;
-            white-space: nowrap;
+            border: 4px solid #00e5ff;
+            border-radius: 24px;
+            padding: 20px 50px;
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.8), inset 0 0 15px rgba(0, 229, 255, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            min-width: 450px;
         }
-        .designer-credit span { color: white; font-weight: bold; }
+
+        /* Top Row: Label and Rainbow Capsule */
+        .credit-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffff00;
+        }
+
+        /* Scorpio Rainbow Animated Badge */
+        .rainbow-badge {
+            border: 2px solid #55ff00;
+            border-radius: 15px;
+            padding: 2px 16px;
+            font-weight: bold;
+            font-size: 16px;
+            background: transparent;
+            background-image: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbowShift 8s linear infinite;
+        }
+
+        /* Ahmed ESSAM Red Neon Pill */
+        .name-pill {
+            background: #cc0000;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 60px;
+            border-radius: 25px;
+            box-shadow: 0 0 20px 5px rgba(204, 0, 0, 0.9);
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            margin: 2px 0;
+        }
+
+        /* Welcome To Scorpion Hack: Glorious Fading Gradient text */
+        .welcome-text {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            background: linear-gradient(45deg, #00ffcc, #00e5ff, #ffffff, #00e5ff, #00ffcc);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlowFade 4s ease infinite;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* Keyframes for the rainbow shift animation */
+        @keyframes rainbowShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Keyframes for the glorious glowing fade effect */
+        @keyframes textGlowFade {
+            0% { background-position: 0% 50%; filter: drop-shadow(0 0 2px rgba(0,255,204,0.3)); opacity: 0.8; }
+            50% { background-position: 100% 50%; filter: drop-shadow(0 0 12px rgba(0,229,255,0.9)); opacity: 1; }
+            100% { background-position: 0% 50%; filter: drop-shadow(0 0 2px rgba(0,255,204,0.3)); opacity: 0.8; }
+        }
     </style>
 </head>
 <body>
@@ -87,16 +156,21 @@
     <div id="msgs">Select PS4 Firmware</div>
 
     <div class="menu-container">
-        <a href="505/index.html" class="scorpio-btn" onmouseover="msgs.innerHTML='PS4 Version 5.05'">FW 5.05</a>
-        <a href="672/index.html" class="scorpio-btn" onmouseover="msgs.innerHTML='PS4 Version 6.72'">FW 6.72</a>
-        <a href="702/index.html" class="scorpio-btn" onmouseover="msgs.innerHTML='PS4 Version 7.02'">FW 7.02</a>
-        <a href="755/index.html" class="scorpio-btn" onmouseover="msgs.innerHTML='PS4 Version 7.55'">FW 7.55</a>
-        <a href="900/index.html" class="scorpio-btn" onmouseover="msgs.innerHTML='PS4 Version 9.00 (PSFree No USB)'">FW 9.00</a>
-        <a href="restore/index.html" class="scorpio-btn" style="border-color: #ffcc00; color: #ffcc00;" onmouseover="msgs.innerHTML='Restore User Guide'">Restore</a>
+        <a href="900/index.html" class="scorpio-btn" onmouseover="msgs.innerHTML='PS4 Version 9.00 (PSFree No USB)'" onmouseout="msgs.innerHTML='Select PS4 Firmware'">FW 9.00</a>
+        <a href="restore/index.html" class="scorpio-btn" onmouseover="msgs.innerHTML='Restore User Guide'" onmouseout="msgs.innerHTML='Select PS4 Firmware'">Restore</a>
     </div>
 
-    <div class="designer-credit">
-        Designed and Compiled By <span>Ahmed Essam</span>
+    <!-- Scorpiozed Designer Credit Component -->
+    <div class="designer-credit-box">
+        <div class="credit-header">
+            Designed, Compiled by : <span class="rainbow-badge">Scorpio</span>
+        </div>
+        <div class="name-pill">
+            Ahmed ESSAM
+        </div>
+        <div class="welcome-text">
+            Welcome to SCORPION HACK
+        </div>
     </div>
 
 </body>
