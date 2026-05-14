@@ -22,6 +22,26 @@
             text-shadow: 0px 0px 10px rgba(0, 229, 255, 0.5);
         }
 
+        /* 🟢 NEW GLOWING HEADLINE BAR COMPONENT */
+        .glowing-headline-bar {
+            background: linear-gradient(90deg, rgba(0,229,255,0) 0%, rgba(0,229,255,0.15) 50%, rgba(0,229,255,0) 100%);
+            border-top: 1px solid rgba(0, 229, 255, 0.4);
+            border-bottom: 1px solid rgba(0, 229, 255, 0.4);
+            padding: 12px 0;
+            margin: 5px auto 20px auto;
+            width: 85%;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #ffffff;
+            /* Shifting matrix neon glow overlay */
+            background-size: 200% auto;
+            text-shadow: 0 0 12px #00e5ff, 0 0 25px rgba(0, 229, 255, 0.5);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.1), inset 0 0 15px rgba(0, 229, 255, 0.05);
+            animation: pulseGlowBar 4s ease-in-out infinite;
+        }
+
         /* CONTAINER WRAPPER FOR THE OUTER SPINNING PERIMETER FIRE TRACER */
         .logo-wrapper {
             width: 190px;
@@ -34,11 +54,11 @@
             justify-content: center;
             align-items: center;
             border-radius: 14px;
-            overflow: hidden; /* Restricts the running light effect to the boundary edge channel */
+            overflow: hidden; 
             box-shadow: 0 0 25px 5px rgba(255, 55, 0, 0.6);
         }
 
-        /* CONIC FIRE matrix (ROTATES BEHIND THE IMAGE AS A BACKGROUND TRACER) */
+        /* CONIC FIRE matrix */
         .logo-wrapper::before {
             content: '';
             position: absolute;
@@ -55,18 +75,18 @@
             object-fit: cover;
             border-radius: 12px;
             position: relative;
-            z-index: 2; /* Ensures the logo covers the center of the spinning light */
+            z-index: 2; 
             background: #000;
         }
 
         .menu-container {
             clear: both;
-            margin-top: 150px; /* Perfectly aligns content row below your new left docked logo */
+            margin-top: 110px; /* Reduced slightly to account for the new banner height balance */
             display: flex;
             justify-content: center;
             gap: 25px;
             flex-wrap: wrap;
-            align-items: center; /* Ensures the larger button stays vertically centered */
+            align-items: center; 
         }
 
         .scorpio-btn {
@@ -170,7 +190,13 @@
             margin-top: 1px;
         }
 
-        /* ROTATION SPEED AND BEHAVIOR FOR BORDER FIRE RACER MATRIX */
+        /* KEYFRAMES FOR CYBER BANNER PULSE */
+        @keyframes pulseGlowBar {
+            0% { opacity: 0.85; filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.4)); text-shadow: 0 0 10px #00e5ff; }
+            50% { opacity: 1; filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.8)); text-shadow: 0 0 18px #00e5ff, 0 0 30px rgba(0,229,255,0.6); }
+            100% { opacity: 0.85; filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.4)); text-shadow: 0 0 10px #00e5ff; }
+        }
+
         @keyframes rotateFire {
             100% { transform: rotate(360deg); }
         }
@@ -208,6 +234,11 @@
     <div class="top-bar">
         <span id="date"></span>
         <span id="clock"></span>
+    </div>
+
+    <!-- 🟢 INSTALLED CYBER GLOW WELCOME HEADLINE BAR -->
+    <div class="glowing-headline-bar">
+        Welcome to SCORPION HACK
     </div>
 
     <!-- Outer running firewall wrapper box container element -->
