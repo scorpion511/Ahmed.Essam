@@ -11,19 +11,20 @@
             padding: 0;
             overflow: hidden;
             font-family: 'Segoe UI', Tahoma, sans-serif;
+            height: 100vh;
         }
 
         .scorpio-logo {
             width: 280px;
-            margin-top: 40px;
+            margin-top: 35px;
             filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8));
         }
 
         .menu-container {
-            margin-top: 30px;
+            margin-top: 25px;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
             padding: 0 50px;
         }
@@ -34,7 +35,7 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(0, 229, 255, 0.4);
             color: #e0faff;
-            padding: 15px 25px;
+            padding: 15px 35px;
             font-size: 18px;
             border-radius: 4px;
             cursor: pointer;
@@ -42,7 +43,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
-            transition: 0.3s;
+            transition: 0.3s ease;
             display: inline-block;
         }
 
@@ -56,48 +57,46 @@
         #msgs {
             font-size: 26px;
             color: #00e5ff;
-            margin-top: 20px;
+            margin-top: 15px;
             height: 40px;
             text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
         }
 
-        /* Glorious Cyber Container Box from Image */
+        /* Adjusted position to guarantee zero touching with menu layout elements */
         .designer-credit-box {
             position: absolute;
-            bottom: 25px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.75);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 4px solid #00e5ff;
             border-radius: 24px;
-            padding: 20px 50px;
-            box-shadow: 0 0 25px rgba(0, 229, 255, 0.8), inset 0 0 15px rgba(0, 229, 255, 0.3);
+            padding: 15px 50px;
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.7), inset 0 0 15px rgba(0, 229, 255, 0.2);
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
-            min-width: 450px;
+            gap: 8px;
+            min-width: 460px;
         }
 
-        /* Top Row: Label and Rainbow Capsule */
         .credit-header {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: bold;
             color: #ffff00;
         }
 
-        /* Scorpio Rainbow Animated Badge */
         .rainbow-badge {
             border: 2px solid #55ff00;
             border-radius: 15px;
             padding: 2px 16px;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 15px;
             background: transparent;
             background-image: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
             background-size: 400% 400%;
@@ -106,24 +105,31 @@
             animation: rainbowShift 8s linear infinite;
         }
 
-        /* Ahmed ESSAM Red Neon Pill */
+        /* Ahmed ESSAM Dark Fire Neon Pill */
         .name-pill {
-            background: #cc0000;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 2px;
+            background: #120000;
+            border: 2px solid #ff3700;
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            padding: 8px 60px;
+            padding: 8px 65px;
             border-radius: 25px;
-            box-shadow: 0 0 20px 5px rgba(204, 0, 0, 0.9);
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 20px 4px rgba(255, 43, 0, 0.75), inset 0 0 10px rgba(0,0,0,0.9);
             margin: 2px 0;
+            display: inline-block;
+            
+            /* Dark Volcanic Fire Text Gradient styling */
+            background: linear-gradient(45deg, #ff2a00, #ff8800, #ffea00, #ff8800, #ff2a00);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: darkFireFlow 3s ease infinite;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
         }
 
-        /* Welcome To Scorpion Hack: Glorious Fading Gradient text */
         .welcome-text {
-            font-size: 22px;
+            font-size: 21px;
             font-weight: bold;
             letter-spacing: 1px;
             background: linear-gradient(45deg, #00ffcc, #00e5ff, #ffffff, #00e5ff, #00ffcc);
@@ -132,21 +138,26 @@
             -webkit-text-fill-color: transparent;
             animation: textGlowFade 4s ease infinite;
             text-align: center;
-            margin-top: 5px;
+            margin-top: 3px;
         }
 
-        /* Keyframes for the rainbow shift animation */
         @keyframes rainbowShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* Keyframes for the glorious glowing fade effect */
         @keyframes textGlowFade {
             0% { background-position: 0% 50%; filter: drop-shadow(0 0 2px rgba(0,255,204,0.3)); opacity: 0.8; }
             50% { background-position: 100% 50%; filter: drop-shadow(0 0 12px rgba(0,229,255,0.9)); opacity: 1; }
             100% { background-position: 0% 50%; filter: drop-shadow(0 0 2px rgba(0,255,204,0.3)); opacity: 0.8; }
+        }
+
+        /* Dynamic Magma/Fire text movement keyframes */
+        @keyframes darkFireFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
     </style>
 </head>
