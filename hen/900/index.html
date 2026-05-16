@@ -1,65 +1,21 @@
-<html>
-<head>
-    <title>The Scorpio Host - Ahmed Essam</title>
-    <style>
-        html, body {
-            background: #24272b url("img.jpg") no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            text-align: center;
-            margin: 0px;
-            overflow: hidden;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-        }
-
-        h1 {
-            text-shadow: 0.1em 0.1em 0.2em black;
-            font-size: 25px;
-            color: white;
-        }
-
-        /* Pure text styling with no boxes or performance-heavy effects */
-        #msgs {
-            font-size: 30px;
-            margin-top: 250px;
-            margin-bottom: 20px;
-        }
-
-        .my-name {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ffea00;
-            text-shadow: 0.1em 0.1em 0.2em black;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-top: 10px;
-        }
-
-        .welcome-sub {
-            font-size: 16px;
-            color: #00e5ff;
-            text-shadow: 0.1em 0.1em 0.2em black;
-            margin-top: 5px;
-        }
-
-        #console {
-            display: none;
-        }
-    </style>
-    <script>
-        if (window.applicationCache.status=='0'){window.location.replace("cache.html");}
-    </script>
-    <script src="payload.js"></script>
-    <script type='module' src='./alert.mjs'></script>
-</head>
-<body>
-    <pre id='console'></pre>
-
-    <!-- Main jailbreak status display -->
-    <h1 id="msgs">Jailbreaking <font color="#fc0404">( Please wait ) ....</font></h1>
-    
-    <!-- Your name and title positioned naturally below the message -->
-    <div class="my-name">Ahmed ESSAM</div>
-    <div class="welcome-sub">Welcome to SCORPION HACK</div>
-</body>
-</html>
+<html><head><title>Scorpio Host</title><style>
+html,body{background:#24272b;color:#fff;text-align:center;margin:0;overflow:hidden;font-family:sans-serif;}
+/* High performance absolute background styling */
+.bg-img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;}
+/* Container centers all elements perfectly in the viewport */
+.main-container{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;}
+#msgs{font-size:30px;text-shadow:0.1em 0.1em 0.2em #000;margin:0 0 15px 0;}
+.n{font-size:24px;font-weight:700;color:#ffea00;text-shadow:0.1em 0.1em 0.2em #000;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;}
+.w{font-size:16px;color:#00e5ff;text-shadow:0.1em 0.1em 0.2em #000;}
+#console{display:none;}</style><script>
+if(window.applicationCache.status=='0'){window.location.replace("cache.html");}
+</script><script src="payload.js"></script><script type='module' src='./alert.mjs'></script></head>
+<body><pre id='console'></pre>
+    <!-- HTML Image element loads significantly faster than a CSS background style -->
+    <img src="img.jpg" class="bg-img" alt="">
+    <div class="main-container">
+        <h1 id="msgs">Jailbreaking <font color="#fc0404">( Please wait ) ....</font></h1>
+        <div class="n">Ahmed ESSAM</div>
+        <div class="w">SCORPION HACK</div>
+    </div>
+</body></html>
