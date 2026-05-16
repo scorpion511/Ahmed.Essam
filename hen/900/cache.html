@@ -3,8 +3,7 @@
     <title>Scorpio Project - Ahmed Essam</title>
     <style>
         html, body {
-            background: url('img.jpg') no-repeat center center fixed; 
-            background-size: cover;
+            background: #111111; 
             color: white;
             text-align: center;
             margin: 0;
@@ -13,49 +12,45 @@
             font-family: 'Segoe UI', Tahoma, sans-serif;
         }
 
-        /* Scorpio Status Container */
-        .status-box {
-            margin-top: 150px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(0, 229, 255, 0.3);
+        .main-content {
+            margin-top: 250px;
             display: inline-block;
-            padding: 50px 70px;
-            border-radius: 8px;
-            box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
         }
 
         #progress {
-            font-size: 32px;
+            font-size: 30px;
             font-weight: bold;
-            color: #e0faff;
-            text-shadow: 0 0 15px rgba(0, 229, 255, 0.8);
+            color: white;
             letter-spacing: 1px;
+            margin: 0 0 15px 0;
         }
 
-        /* Stable Designer Credit Rectangle */
-        .designer-credit {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 229, 255, 0.4);
-            padding: 10px 40px;
-            border-radius: 4px;
-            font-size: 22px; /* Set to your stable size */
-            letter-spacing: 2px;
-            color: #00e5ff;
-            white-space: nowrap;
+        .bar-spacer {
+            width: 240px;
+            height: 12px;
+            margin: 15px auto 35px auto;
+            border: 2px solid white;
+            background: transparent;
         }
-        .designer-credit span { color: white; font-weight: bold; }
+
+        .my-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffea00;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .welcome-sub {
+            font-size: 16px;
+            color: #00e5ff;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
     <script>
-        // CLEAN HISTORY TO PREVENT BUGS
         history.replaceState(null,null,'index.html');
         var histlength=history.length;
         history.go(-histlength);
@@ -81,13 +76,13 @@
         window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
     </script>
 
-    <div class="status-box">
-        <img src="../../logo.png" style="width: 200px; margin-bottom: 20px; filter: drop-shadow(0 0 10px #00e5ff);">
+    <div class="main-content">
         <h1 id="progress">Preparing Scorpio Caching...</h1>
-    </div>
+        
+        <div class="bar-spacer"></div>
 
-    <div class="designer-credit">
-        Designed and Compiled By <span>Ahmed Essam</span>
+        <div class="my-name">Ahmed ESSAM</div>
+        <div class="welcome-sub">Welcome to SCORPION HACK</div>
     </div>
 </body>
 </html>
