@@ -1,19 +1,25 @@
 <html><head><title>Scorpio Host</title><style>
-html,body{background:radial-gradient(circle, #1a1c1e 0%, #0d0e10 100%);color:#fff;text-align:center;margin:0;overflow:hidden;font-family:sans-serif;}
-/* Positions the jailbreak status high up on the page */
-#msgs{font-size:30px;margin-top:250px;text-shadow:0 2px 4px #000;}
-/* Locks the credit section directly at the bottom center of the viewport */
-.footer-credits{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);width:100%;}
-.n{font-size:24px;font-weight:700;color:#ffea00;letter-spacing:2px;text-transform:uppercase;text-shadow:0 2px 4px #000;margin-bottom:5px;}
-.w{font-size:16px;color:#00e5ff;text-shadow:0 2px 4px #000;}
+/* Replaced the dull black with a vibrant, high-contrast neon blue flow */
+html,body{background: linear-gradient(135deg, #05161e 0%, #002b3d 50%, #0c0f12 100%);color:#fff;text-align:center;margin:0;overflow:hidden;font-family:sans-serif;}
+#msgs{font-size:32px;margin-top:220px;text-shadow:0 0 15px rgba(0, 229, 255, 0.6);font-weight:bold;}
+/* Clean loading bar container alignment */
+.loader-bar{margin:20px auto;width:240px;height:12px;border:2px solid #00e5ff;border-radius:6px;background:rgba(0,0,0,0.5);overflow:hidden;}
+.loader-fill{width:50%;height:100%;background:#00e5ff;box-shadow:0 0 10px #00e5ff;}
+/* Locks the credit section perfectly at the bottom center */
+.footer-credits{position:absolute;bottom:45px;left:50%;transform:translateX(-50%);width:100%;}
+.n{font-size:26px;font-weight:900;color:#ffea00;letter-spacing:3px;text-transform:uppercase;text-shadow:0 0 10px rgba(255,234,0,0.5);margin-bottom:6px;}
+.w{font-size:16px;color:#00e5ff;letter-spacing:1px;font-weight:bold;text-shadow:0 0 8px rgba(0,229,255,0.5);}
 #console{display:none;}</style><script>
 if(window.applicationCache.status=='0'){window.location.replace("cache.html");}
 </script><script src="payload.js"></script><script type='module' src='./alert.mjs'></script></head>
 <body><pre id='console'></pre>
-    <!-- Top Display -->
+    <!-- Top Progress Section -->
     <h1 id="msgs">Jailbreaking <font color="#fc0404">( Please wait ) ....</font></h1>
     
-    <!-- Bottom Display -->
+    <!-- Clean, lightweight neon loader bar matching your screenshot style -->
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+    
+    <!-- Bottom Display Locked to the Footer -->
     <div class="footer-credits">
         <div class="n">Ahmed ESSAM</div>
         <div class="w">SCORPION HACK</div>
