@@ -3,148 +3,49 @@
     <title>The Scorpio Host - Ahmed Essam</title>
     <style>
         html, body {
-            background: url('img.jpg') no-repeat center center fixed; 
+            background: #24272b url("img.jpg") no-repeat center center fixed;
             background-size: cover;
             color: white;
             text-align: center;
-            margin: 0;
-            padding: 0;
+            margin: 0px;
             overflow: hidden;
             font-family: 'Segoe UI', Tahoma, sans-serif;
         }
 
-        /* Scorpio Status Container */
-        .status-box {
-            margin-top: 150px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(0, 229, 255, 0.3);
-            display: inline-block;
-            padding: 50px 70px;
-            border-radius: 8px;
-            box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
+        h1 {
+            text-shadow: 0.1em 0.1em 0.2em black;
+            font-size: 25px;
+            color: white;
         }
 
+        /* Pure text styling with no boxes or performance-heavy effects */
         #msgs {
-            font-size: 32px;
+            font-size: 30px;
+            margin-top: 250px;
+            margin-bottom: 20px;
+        }
+
+        .my-name {
+            font-size: 24px;
             font-weight: bold;
-            color: #e0faff;
-            text-shadow: 0 0 15px rgba(0, 229, 255, 0.8);
-            letter-spacing: 2px;
-        }
-
-        /* Animated Loader */
-        .loader {
-            margin: 30px auto;
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(255, 255, 255, 0.1);
-            border-top: 3px solid #00e5ff;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-        /* Compact Scorpio Designer Credit Container Box */
-        .designer-credit-box {
-            position: absolute;
-            bottom: 12px;                  /* Adjusted slightly lower for maximum clearance */
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 2px solid #00e5ff;     /* Slimmer border line */
-            border-radius: 14px;           /* More compact curved corners */
-            padding: 4px 25px;             /* Reduced cell padding to scale box down */
-            box-shadow: 0 0 25px rgba(0, 229, 255, 0.7), inset 0 0 15px rgba(0, 229, 255, 0.2);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;                      /* Tighter spacing parameters between internal rows */
-            min-width: 300px;              /* Scaled down global component width */
-        }
-
-        .credit-header {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 13px;               /* Scaled text sizes */
-            font-weight: bold;
-            color: #ffff00;
-        }
-
-        .rainbow-badge {
-            border: 1.5px solid #55ff00;
-            border-radius: 12px;
-            padding: 1px 12px;
-            font-weight: bold;
-            font-size: 13px;               /* Scaled text sizes */
-            background: transparent;
-            background-image: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
-            background-size: 400% 400%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: rainbowShift 8s linear infinite;
-        }
-
-        /* Ahmed ESSAM Dark Fire & Golden Magma Neon Pill */
-        .name-pill {
-            background: #120000;
-            border: 1.5px solid #ff3700;
-            font-size: 18px;               /* Reduced font dimensions down from original 25px */
-            font-weight: 900;
+            color: #ffea00;
+            text-shadow: 0.1em 0.1em 0.2em black;
             letter-spacing: 2px;
             text-transform: uppercase;
-            padding: 4px 45px;             /* Reduced horizontal and vertical button padding */
-            border-radius: 25px;
-            box-shadow: 0 0 20px 4px rgba(255, 43, 0, 0.75), inset 0 0 10px rgba(0,0,0,0.9);
-            margin: 2px 0;
-            display: inline-block;
-            background: linear-gradient(45deg, #ff2a00, #ff8800, #ffea00, #ff8800, #ff2a00);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: darkFireFlow 3s ease infinite;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
+            margin-top: 10px;
         }
 
-        .welcome-text {
-            font-size: 16px;               /* Reduced font dimensions down from original 21px */
-            font-weight: bold;
-            letter-spacing: 1px;
-            background: linear-gradient(45deg, #00ffcc, #00e5ff, #ffffff, #00e5ff, #00ffcc);
-            background-size: 300% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: textGlowFade 4s ease infinite;
-            text-align: center;
-            margin-top: 1px;
+        .welcome-sub {
+            font-size: 16px;
+            color: #00e5ff;
+            text-shadow: 0.1em 0.1em 0.2em black;
+            margin-top: 5px;
         }
 
-        @keyframes rainbowShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        #console {
+            display: none;
         }
-
-        @keyframes textGlowFade {
-            0% { background-position: 0% 50%; filter: drop-shadow(0 0 2px rgba(0,255,204,0.3)); opacity: 0.8; }
-            50% { background-position: 100% 50%; filter: drop-shadow(0 0 12px rgba(0,229,255,0.9)); opacity: 1; }
-            100% { background-position: 0% 50%; filter: drop-shadow(0 0 2px rgba(0,255,204,0.3)); opacity: 0.8; }
-        }
-
-        @keyframes darkFireFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        #console { display: none; }
     </style>
-
-    <!-- RESTORED WOLF ORIGINAL LOGIC -->
     <script>
         if (window.applicationCache.status=='0'){window.location.replace("cache.html");}
     </script>
@@ -154,23 +55,11 @@
 <body>
     <pre id='console'></pre>
 
-    <div class="status-box">
-        <img src="../../logo.png" style="width: 220px; margin-bottom: 25px; filter: drop-shadow(0 0 10px #00e5ff);">
-        <h1 id="msgs">Jailbreaking <span style="color:#fc0404;">( Please wait ) ....</span></h1>
-        <div class="loader"></div>
-    </div>
-
-    <!-- Integrated Scorpiozed Designer Credit Component -->
-    <div class="designer-credit-box">
-        <div class="credit-header">
-            Designed, Compiled by : <span class="rainbow-badge">Scorpio</span>
-        </div>
-        <div class="name-pill">
-            Ahmed ESSAM
-        </div>
-        <div class="welcome-text">
-            Welcome to SCORPION HACK
-        </div>
-    </div>
+    <!-- Main jailbreak status display -->
+    <h1 id="msgs">Jailbreaking <font color="#fc0404">( Please wait ) ....</font></h1>
+    
+    <!-- Your name and title positioned naturally below the message -->
+    <div class="my-name">Ahmed ESSAM</div>
+    <div class="welcome-sub">Welcome to SCORPION HACK</div>
 </body>
 </html>
