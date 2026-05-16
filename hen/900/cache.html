@@ -1,12 +1,89 @@
-<html manifest="Cache.manifest"><head><title>Scorpio Project</title><style>
-html,body{background:#111111;color:#fff;text-align:center;margin:0;padding:0;overflow:hidden;font-family:'Segoe UI',Tahoma,sans-serif;}
-.m{margin-top:250px;display:inline-block;}
-#progress{font-size:30px;font-weight:700;color:#fff;letter-spacing:1px;margin:0 0 15px 0;}
-.b{width:240px;height:12px;margin:15px auto 35px auto;border:2px solid #fff;background:transparent;}
-.n{font-size:24px;font-weight:700;color:#ffea00;letter-spacing:2px;text-transform:uppercase;margin-top:10px;}
-.w{font-size:16px;color:#00e5ff;margin-top:5px;}</style></head><body><script>
-history.replaceState(null,null,'index.html');var histlength=history.length;history.go(-histlength);
-function DLProgress(e){Percent=(Math.round(e.loaded/e.total*100));setTimeout(function(){window.progress.innerHTML="Installing Scorpio Cache: "+Percent+"%";},500);}
-function DisplayCacheProgress(){setTimeout(function(){window.progress.innerHTML="Scorpio Cache Installed Successfully ✔";},1500);setTimeout(function(){window.progress.innerHTML="Now Close And Re-Open Your Browser ..";},3500);}
-window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
-</script><div class="m"><h1 id="progress">Preparing Scorpio Caching...</h1><div class="b"></div><div class="n">Ahmed ESSAM</div><div class="w">Welcome to SCORPION HACK</div></div></body></html>
+<html manifest="Cache.manifest">
+<head>
+    <title>Scorpio Project - Ahmed Essam</title>
+    <style>
+        html, body {
+            background: #111111; 
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        .main-content {
+            margin-top: 250px;
+            display: inline-block;
+        }
+
+        #progress {
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            letter-spacing: 1px;
+            margin: 0 0 15px 0;
+        }
+
+        .bar-spacer {
+            width: 240px;
+            height: 12px;
+            margin: 15px auto 35px auto;
+            border: 2px solid white;
+            background: transparent;
+        }
+
+        .my-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffea00;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .welcome-sub {
+            font-size: 16px;
+            color: #00e5ff;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        history.replaceState(null,null,'index.html');
+        var histlength=history.length;
+        history.go(-histlength);
+
+        function DLProgress(e){
+            Percent=(Math.round(e.loaded / e.total * 100));
+            setTimeout(function(){
+                /* FIXED: Replaced window.progress with standard document lookup to stop the browser freeze */
+                document.getElementById("progress").innerHTML="Installing Scorpio Cache: " + Percent + "%";
+            },500);
+        }
+
+        function DisplayCacheProgress(){
+            setTimeout(function(){
+                document.getElementById("progress").innerHTML="Scorpio Cache Installed Successfully ✔";
+            },1500);
+            setTimeout(function(){
+                document.getElementById("progress").innerHTML="Now Close And Re-Open Your Browser ..";
+            },3500);
+        }
+
+        window.applicationCache.addEventListener("progress",DLProgress,false);
+        window.applicationCache.oncached=function(e){DisplayCacheProgress();};
+        window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+    </script>
+
+    <div class="main-content">
+        <h1 id="progress">Preparing Scorpio Caching...</h1>
+        
+        <div class="bar-spacer"></div>
+
+        <div class="my-name">Ahmed ESSAM</div>
+        <div class="welcome-sub">Welcome to SCORPION HACK</div>
+    </div>
+</body>
+</html>
