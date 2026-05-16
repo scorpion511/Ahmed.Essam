@@ -6,7 +6,11 @@ html,body{background:linear-gradient(135deg,#05161e 0%,#002b3d 50%,#0c0f12 100%)
 .w{font-size:16px;color:#00e5ff;font-weight:bold;}
 #console{display:none;}</style><script>
 if(window.applicationCache.status=='0'){window.location.replace("cache.html");}
-</script><script src="payload.js"></script><script type='module' src='./alert.mjs'></script></head>
+</script></head>
 <body><pre id='console'></pre>
 <h1 id="msgs">Jailbreaking <font color="#fc0404">( Please wait ) ....</font></h1>
-<div class="f"><div class="n">Ahmed ESSAM</div><div class="w">SCORPION HACK</div></div></body></html>
+<div class="f"><div class="n">Ahmed ESSAM</div><div class="w">SCORPION HACK</div></div>
+<!-- Order Fixed: Swapped to Wolf's sequential script loading order to prevent thread crashes -->
+<script src="payload.js"></script>
+<script type='module' src='./alert.mjs'></script>
+</body></html>
