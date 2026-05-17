@@ -42,12 +42,7 @@ function DLProgress(e){
 
 function DisplayCacheProgress(){
     setTimeout(function(){window.progress.innerHTML="Scorpio Cache Installed Successfully ✔";},1500);
-    setTimeout(function(){
-        window.progress.innerHTML="Launching Host... ";
-        setTimeout(function(){
-            window.location.replace("index.html");
-        }, 1000);
-    },3500);
+    setTimeout(function(){window.progress.innerHTML="Now Close And Re-Open Your Browser ..";},3500);
 }
 
 window.applicationCache.addEventListener("progress",DLProgress,false);
