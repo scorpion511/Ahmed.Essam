@@ -18,7 +18,6 @@ AIO_Fix_Temp/patch_aio.c
 AIO_Fix_Temp/vfs_aio2_pdtor.c
 fonts/FONTS.LICENSE
 fonts/LiberationMono-Regular.ttf
-fonts/README.txt
 kpatch/900.c
 kpatch/900.d
 kpatch/900.elf
