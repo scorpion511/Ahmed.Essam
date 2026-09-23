@@ -234,47 +234,26 @@
     </div>
     <script>
     (function() {
-        // 1. Direct gateway connection to CounterAPI v2 infrastructure
-        var hostUrl = 'https://api.counterapi.dev/v2';
-        
-        var apiKey = 'ut_YtrojkMWg4YDkqfco51uTl7WN8uVTR3c6JK2Bvdv'; 
-        
-        // 2. UPDATED: Target your direct name workspace handle
-        var workspace = 'scorpion511'; 
-        var counterName = 'total-visits'; 
+        // 1. Define your starting visitor number
+        var baseCount = 13268;
 
-        var fullUrl = hostUrl + '/workspaces/' + workspace + '/counters/' + counterName + '/up';
+        // 2. Use browser session storage to track refreshes during this visit
+        if (!sessionStorage.getItem('fake_visit_increment')) {
+            sessionStorage.setItem('fake_visit_increment', '0');
+        }
 
-        fetch(fullUrl, { 
-            method: 'GET',
-            cache: 'no-cache',
-            headers: {
-                'Authorization': 'Bearer ' + apiKey
-            }
-        })
-        .then(function(res) { 
-            if (!res.ok) throw new Error('API server rejected the request');
-            return res.json(); 
-        })
-        .then(function(response) {
-            // 3. Extracts and maps the numerical value layer
-            if (response && response.data && response.data.value !== undefined) {
-                var countStr = response.data.value.toString();
-                
-                // Retain your clean 4-digit site layout design
-                while(countStr.length < 4) { countStr = "0" + countStr; }
-                
-                var mainCounter = document.getElementById('scorp-live-text');
-                if (mainCounter) {
-                    mainCounter.innerText = countStr;
-                }
-            }
-        })
-        .catch(function(err) {
-            console.error("CounterAPI error details:", err);
-            var mainCounter = document.getElementById('scorp-live-text');
-            if (mainCounter) mainCounter.innerText = "----";
-        });
+        // Increment the local count session offset by 1
+        var currentOffset = parseInt(sessionStorage.getItem('fake_visit_increment')) + 1;
+        sessionStorage.setItem('fake_visit_increment', currentOffset.toString());
+
+        // Calculate the final number to show the user
+        var finalCount = baseCount + currentOffset;
+
+        // 3. Inject the number directly into your site layout footer
+        var mainCounter = document.getElementById('scorp-live-text');
+        if (mainCounter) {
+            mainCounter.innerText = finalCount.toString();
+        }
     })();
 </script>
 </body>
