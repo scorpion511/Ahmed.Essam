@@ -234,14 +234,14 @@
     </div>
     <script>
     (function() {
-        var hostUrl = 'https://counterapi.dev';
+        // 1. Pointing directly to CounterAPI's active V2 gateway
+        var hostUrl = 'https://api.counterapi.dev/v2';
         
-        // Your live API Token
         var apiKey = 'ut_YtrojkMWg4YDkqfco51uTl7WN8uVTR3c6JK2Bvdv'; 
-        
-        // Your exact backend Team Slug
         var workspace = 'scorpion511s-team'; 
-        var counterName = 'TOTAL_VISITS'; 
+        
+        // 2. This MUST stay lowercase so the database server understands the path URL
+        var counterName = 'total-visits'; 
 
         var fullUrl = hostUrl + '/workspaces/' + workspace + '/counters/' + counterName + '/up';
 
@@ -257,11 +257,11 @@
             return res.json(); 
         })
         .then(function(response) {
-            // Extracts the updated count from CounterAPI V2 JSON structure
+            // 3. Extracting the real counter data number
             if (response && response.data && response.data.value !== undefined) {
                 var countStr = response.data.value.toString();
                 
-                // Pads the string with leading zeros to maintain a 4-digit layout
+                // Forces leading zeros to keep your 4-digit layout intact
                 while(countStr.length < 4) { countStr = "0" + countStr; }
                 
                 var mainCounter = document.getElementById('scorp-live-text');
