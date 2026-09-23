@@ -234,51 +234,47 @@
     </div>
     <script>
     (function() {
-        var hostUrl = 'https://api.counterapi.dev/v2';
-        var counterName = 'view';
+        var hostUrl = 'https://counterapi.dev';
         
-        // TRY OPTION 1 FIRST: Your explicit team slug
+        // Your live API Token
+        var apiKey = 'ut_YtrojkMWg4YDkqfco51uTl7WN8uVTR3c6JK2Bvdv'; 
+        
+        // Your exact backend Team Slug
         var workspace = 'scorpion511s-team'; 
-        
-        // Fallback option if you want to switch manually:
-        // var workspace = 'scorpion511';
+        var counterName = 'Total Visits'; 
 
         var fullUrl = hostUrl + '/workspaces/' + workspace + '/counters/' + counterName + '/up';
 
-        fetch(fullUrl, { cache: 'no-cache' })
+        fetch(fullUrl, { 
+            method: 'GET',
+            cache: 'no-cache',
+            headers: {
+                'Authorization': 'Bearer ' + apiKey
+            }
+        })
         .then(function(res) { 
-            if (!res.ok) throw new Error('First workspace path failed');
+            if (!res.ok) throw new Error('API server rejected the request');
             return res.json(); 
         })
         .then(function(response) {
-            updateCounterUI(response);
-        })
-        .catch(function(err) {
-            console.log("Retrying with alternative workspace name...");
-            // OPTION 2: Automatically fall back to your direct name if option 1 fails
-            var fallbackWorkspace = 'scorpion511';
-            var fallbackUrl = hostUrl + '/workspaces/' + fallbackWorkspace + '/counters/' + counterName + '/up';
-            
-            fetch(fallbackUrl, { cache: 'no-cache' })
-            .then(function(res) { return res.json(); })
-            .then(function(response) {
-                updateCounterUI(response);
-            })
-            .catch(function(finalErr) {
-                console.error("Both workspace paths failed:", finalErr);
-                var mainCounter = document.getElementById('scorp-live-text');
-                if (mainCounter) mainCounter.innerText = "9347";
-            });
-        });
-
-        function updateCounterUI(response) {
+            // Extracts the updated count from CounterAPI V2 JSON structure
             if (response && response.data && response.data.value !== undefined) {
                 var countStr = response.data.value.toString();
+                
+                // Pads the string with leading zeros to maintain a 4-digit layout
                 while(countStr.length < 4) { countStr = "0" + countStr; }
+                
                 var mainCounter = document.getElementById('scorp-live-text');
-                if (mainCounter) mainCounter.innerText = countStr;
+                if (mainCounter) {
+                    mainCounter.innerText = countStr;
+                }
             }
-        }
+        })
+        .catch(function(err) {
+            console.error("CounterAPI error details:", err);
+            var mainCounter = document.getElementById('scorp-live-text');
+            if (mainCounter) mainCounter.innerText = "----";
+        });
     })();
 </script>
 </body>
